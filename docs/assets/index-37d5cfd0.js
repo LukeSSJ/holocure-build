@@ -5614,7 +5614,7 @@ const _sfc_main = {
       stamps: []
     });
     const activeWeapons = computed(() => {
-      return [active.character.weapon].concat(active.weapons);
+      return [active.character.weapon].concat(active.weapons).filter();
     });
     const weaponsUsed = {};
     loadBuild();
