@@ -64,6 +64,7 @@
 <script setup>
     /*
         TODO:
+        - Load build from URL
         - Super items
         - Show character skills
         - Icons for characters, weapons and items
@@ -163,7 +164,7 @@
         let weapons = active.weapons.map(w => w.id).join(",")
         let items = active.items.map(i => i.id).join(",")
         let stamps = active.stamps.map(s => s.id).join(",")
-        let url = `${location.origin}?c=${character}&w=${weapons}&i=${items}&s=${stamps}`
+        let url = `${location.origin}${location.pathname}?c=${character}&w=${weapons}&i=${items}&s=${stamps}`
         console.log(url)
     }
 </script>
