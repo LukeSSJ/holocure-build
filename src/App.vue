@@ -167,7 +167,7 @@
     }
 
     function imageUrl(src) {
-        return new URL(src, import.meta.url)
+        return new URL(src, import.meta.url + "/holocure-build")
     }
 
     function saveBuild() {
