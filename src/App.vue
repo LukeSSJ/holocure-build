@@ -4,6 +4,10 @@
         padding: 2rem 1rem;
         background: #306080;
         color: white;
+        font-size: 1.2rem;
+    }
+    .text-header {
+        margin-bottom: 0.5rem;
     }
     .item-wrap {
         display: flex;
@@ -47,7 +51,7 @@
     <!--<div>Skills</div>-->
 
     <div>
-        Weapons:
+        <div class="text-header">Weapons:</div>
         <div class="item-wrap">
             <button v-for="weapon in activeWeapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
                 <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
@@ -58,7 +62,7 @@
     <br>
 
     <div>
-        Items:
+        <div class="text-header">Items:</div>
         <div class="item-wrap">
             <button v-for="item in active.items" :key="item.id" @click="removeItem(item)" class="item">
                 <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
@@ -69,7 +73,7 @@
     <br>
 
     <div>
-        Stamps:
+        <div class="text-header">Stamps:</div>
         <div class="item-wrap">
             <button v-for="stamp in active.stamps" :key="stamp.id" @click="removeStamp(stamp)" class="item">
                 <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
@@ -80,7 +84,7 @@
     <br><br>
 
     <div>
-        Available Weapons:
+        <div class="text-header">Available Weapons:</div>
         <div class="item-wrap">
             <button v-for="weapon in weapons" :key="weapon.id" @click="addWeapon(weapon)" :disabled="weaponDisabled(weapon)" class="item">
                 <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
@@ -91,7 +95,7 @@
     <br>
 
     <div>
-        Available Items:
+        <div class="text-header">Available Items:</div>
         <div class="item-wrap">
             <button v-for="item in items" :key="item.id" @click="addItem(item)" :disabled="itemDisabled(item)" class="item">
                 <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
@@ -102,7 +106,7 @@
     <br>
 
     <div>
-        Available Stamps:
+        <div class="text-header">Available Stamps:</div>
         <div class="item-wrap">
             <button v-for="stamp in stamps" :key="stamp.id" @click="addStamp(stamp)" :disabled="stampDisabled(stamp)" class="item">
                 <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
@@ -114,11 +118,10 @@
 <script setup>
     /*
         TODO:
-        - Character weapon icons
         - Icons for characters
-        - Super items
-        - Show character skills
         - Styling
+        - Show character skills
+        - Super items
     */
 
     import {ref, reactive, computed} from 'vue'

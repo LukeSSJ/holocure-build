@@ -5574,30 +5574,36 @@ const _hoisted_1 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
 const _hoisted_2 = /* @__PURE__ */ createBaseVNode("option", { value: "" }, "...", -1);
 const _hoisted_3 = ["value"];
 const _hoisted_4 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_5 = { class: "item-wrap" };
-const _hoisted_6 = ["onClick"];
-const _hoisted_7 = ["src", "alt"];
-const _hoisted_8 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_9 = { class: "item-wrap" };
-const _hoisted_10 = ["onClick"];
-const _hoisted_11 = ["src", "alt"];
-const _hoisted_12 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_13 = { class: "item-wrap" };
-const _hoisted_14 = ["onClick"];
-const _hoisted_15 = ["src", "alt"];
-const _hoisted_16 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_17 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_18 = { class: "item-wrap" };
-const _hoisted_19 = ["onClick", "disabled"];
-const _hoisted_20 = ["src", "alt"];
-const _hoisted_21 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_5 = /* @__PURE__ */ createBaseVNode("div", { class: "text-header" }, "Weapons:", -1);
+const _hoisted_6 = { class: "item-wrap" };
+const _hoisted_7 = ["onClick"];
+const _hoisted_8 = ["src", "alt"];
+const _hoisted_9 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_10 = /* @__PURE__ */ createBaseVNode("div", { class: "text-header" }, "Items:", -1);
+const _hoisted_11 = { class: "item-wrap" };
+const _hoisted_12 = ["onClick"];
+const _hoisted_13 = ["src", "alt"];
+const _hoisted_14 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_15 = /* @__PURE__ */ createBaseVNode("div", { class: "text-header" }, "Stamps:", -1);
+const _hoisted_16 = { class: "item-wrap" };
+const _hoisted_17 = ["onClick"];
+const _hoisted_18 = ["src", "alt"];
+const _hoisted_19 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_20 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_21 = /* @__PURE__ */ createBaseVNode("div", { class: "text-header" }, "Available Weapons:", -1);
 const _hoisted_22 = { class: "item-wrap" };
 const _hoisted_23 = ["onClick", "disabled"];
 const _hoisted_24 = ["src", "alt"];
 const _hoisted_25 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
-const _hoisted_26 = { class: "item-wrap" };
-const _hoisted_27 = ["onClick", "disabled"];
-const _hoisted_28 = ["src", "alt"];
+const _hoisted_26 = /* @__PURE__ */ createBaseVNode("div", { class: "text-header" }, "Available Items:", -1);
+const _hoisted_27 = { class: "item-wrap" };
+const _hoisted_28 = ["onClick", "disabled"];
+const _hoisted_29 = ["src", "alt"];
+const _hoisted_30 = /* @__PURE__ */ createBaseVNode("br", null, null, -1);
+const _hoisted_31 = /* @__PURE__ */ createBaseVNode("div", { class: "text-header" }, "Available Stamps:", -1);
+const _hoisted_32 = { class: "item-wrap" };
+const _hoisted_33 = ["onClick", "disabled"];
+const _hoisted_34 = ["src", "alt"];
 const _sfc_main = {
   __name: "App",
   setup(__props) {
@@ -5740,8 +5746,8 @@ const _sfc_main = {
         ]),
         _hoisted_4,
         createBaseVNode("div", null, [
-          createTextVNode(" Weapons: "),
-          createBaseVNode("div", _hoisted_5, [
+          _hoisted_5,
+          createBaseVNode("div", _hoisted_6, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(activeWeapons.value, (weapon) => {
               return openBlock(), createElementBlock("button", {
                 key: weapon.id,
@@ -5751,15 +5757,15 @@ const _sfc_main = {
                 createBaseVNode("img", {
                   src: imageUrl(`/weapons/${weapon.icon}.webp`),
                   alt: weapon.name
-                }, null, 8, _hoisted_7)
-              ], 8, _hoisted_6);
+                }, null, 8, _hoisted_8)
+              ], 8, _hoisted_7);
             }), 128))
           ])
         ]),
-        _hoisted_8,
+        _hoisted_9,
         createBaseVNode("div", null, [
-          createTextVNode(" Items: "),
-          createBaseVNode("div", _hoisted_9, [
+          _hoisted_10,
+          createBaseVNode("div", _hoisted_11, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(active.items, (item) => {
               return openBlock(), createElementBlock("button", {
                 key: item.id,
@@ -5769,15 +5775,15 @@ const _sfc_main = {
                 createBaseVNode("img", {
                   src: imageUrl(`/items/${item.icon}.webp`),
                   alt: item.name
-                }, null, 8, _hoisted_11)
-              ], 8, _hoisted_10);
+                }, null, 8, _hoisted_13)
+              ], 8, _hoisted_12);
             }), 128))
           ])
         ]),
-        _hoisted_12,
+        _hoisted_14,
         createBaseVNode("div", null, [
-          createTextVNode(" Stamps: "),
-          createBaseVNode("div", _hoisted_13, [
+          _hoisted_15,
+          createBaseVNode("div", _hoisted_16, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(active.stamps, (stamp) => {
               return openBlock(), createElementBlock("button", {
                 key: stamp.id,
@@ -5787,16 +5793,16 @@ const _sfc_main = {
                 createBaseVNode("img", {
                   src: imageUrl(`/stamps/${stamp.icon}.webp`),
                   alt: stamp.name
-                }, null, 8, _hoisted_15)
-              ], 8, _hoisted_14);
+                }, null, 8, _hoisted_18)
+              ], 8, _hoisted_17);
             }), 128))
           ])
         ]),
-        _hoisted_16,
-        _hoisted_17,
+        _hoisted_19,
+        _hoisted_20,
         createBaseVNode("div", null, [
-          createTextVNode(" Available Weapons: "),
-          createBaseVNode("div", _hoisted_18, [
+          _hoisted_21,
+          createBaseVNode("div", _hoisted_22, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(unref(weapons), (weapon) => {
               return openBlock(), createElementBlock("button", {
                 key: weapon.id,
@@ -5807,15 +5813,15 @@ const _sfc_main = {
                 createBaseVNode("img", {
                   src: imageUrl(`/weapons/${weapon.icon}.webp`),
                   alt: weapon.name
-                }, null, 8, _hoisted_20)
-              ], 8, _hoisted_19);
+                }, null, 8, _hoisted_24)
+              ], 8, _hoisted_23);
             }), 128))
           ])
         ]),
-        _hoisted_21,
+        _hoisted_25,
         createBaseVNode("div", null, [
-          createTextVNode(" Available Items: "),
-          createBaseVNode("div", _hoisted_22, [
+          _hoisted_26,
+          createBaseVNode("div", _hoisted_27, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(unref(items), (item) => {
               return openBlock(), createElementBlock("button", {
                 key: item.id,
@@ -5826,15 +5832,15 @@ const _sfc_main = {
                 createBaseVNode("img", {
                   src: imageUrl(`/items/${item.icon}.webp`),
                   alt: item.name
-                }, null, 8, _hoisted_24)
-              ], 8, _hoisted_23);
+                }, null, 8, _hoisted_29)
+              ], 8, _hoisted_28);
             }), 128))
           ])
         ]),
-        _hoisted_25,
+        _hoisted_30,
         createBaseVNode("div", null, [
-          createTextVNode(" Available Stamps: "),
-          createBaseVNode("div", _hoisted_26, [
+          _hoisted_31,
+          createBaseVNode("div", _hoisted_32, [
             (openBlock(true), createElementBlock(Fragment, null, renderList(unref(stamps), (stamp) => {
               return openBlock(), createElementBlock("button", {
                 key: stamp.id,
@@ -5845,8 +5851,8 @@ const _sfc_main = {
                 createBaseVNode("img", {
                   src: imageUrl(`/stamps/${stamp.icon}.webp`),
                   alt: stamp.name
-                }, null, 8, _hoisted_28)
-              ], 8, _hoisted_27);
+                }, null, 8, _hoisted_34)
+              ], 8, _hoisted_33);
             }), 128))
           ])
         ])
