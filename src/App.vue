@@ -1,5 +1,7 @@
 <style>
     body {
+        margin: 0;
+        padding: 2rem 1rem;
         background: #306080;
         color: white;
     }
@@ -46,9 +48,8 @@
 
     <div>
         Weapons:
-        <span v-if="active.character">{{ active.character.weapon }}</span>
         <div class="item-wrap">
-            <button v-for="weapon in active.weapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
+            <button v-for="weapon in activeWeapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
                 <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
             </button>
         </div>
@@ -113,14 +114,14 @@
 <script setup>
     /*
         TODO:
-        - Load build from URL
+        - Character weapon icons
         - Icons for characters
         - Super items
         - Show character skills
         - Styling
     */
 
-    import {ref, reactive} from 'vue'
+    import {ref, reactive, computed} from 'vue'
     import {characters, weapons, items, stamps} from './data.js'
 
     const active = reactive({
@@ -128,6 +129,10 @@
         weapons: [],
         items: [],
         stamps: [],
+    })
+
+    const activeWeapons = computed(() => {
+        return [active.character.weapon].concat(active.weapons)
     })
 
     const weaponsUsed = {}
