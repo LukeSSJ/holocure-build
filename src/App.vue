@@ -1,3 +1,25 @@
+<style>
+    body {
+        background: #306080;
+        color: white;
+    }
+    .item-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .item {
+        width: 80px;
+        height: 80px;
+        background: #507280;
+        border: 4px solid white;
+        cursor: pointer;
+    }
+    .item:disabled {
+        opacity: 0.4;
+    }
+</style>
+
 <template>
     <div>
         <button @click="saveBuild">Save</button>
@@ -22,14 +44,22 @@
     <div>
         Weapons:
         <span v-if="active.character">{{ active.character.weapon }}</span>
-        <button v-for="weapon in active.weapons" :key="weapon.id" @click="removeWeapon(weapon)">{{ weapon.name }}</button>
+        <div class="item-wrap">
+            <button v-for="weapon in active.weapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
+                <img :src="`/weapons/${weapon.icon}.webp`" :alt="weapon.name">
+            </button>
+        </div>
     </div>
 
     <br>
 
     <div>
         Items:
-        <button v-for="item in active.items" :key="item.id" @click="removeItem(item)">{{ item.name }}</button>
+        <div class="item-wrap">
+            <button v-for="item in active.items" :key="item.id" @click="removeItem(item)" class="item">
+                <img :src="`/items/${item.icon}.webp`" :alt="item.name">
+            </button>
+        </div>
     </div>
 
     <br>
@@ -43,14 +73,22 @@
 
     <div>
         Available Weapons:
-        <button v-for="weapon in weapons" :key="weapon.id" @click="addWeapon(weapon)" :disabled="weaponDisabled(weapon)">{{ weapon.name }}</button>
+        <div class="item-wrap">
+            <button v-for="weapon in weapons" :key="weapon.id" @click="addWeapon(weapon)" :disabled="weaponDisabled(weapon)" class="item">
+                <img :src="`/weapons/${weapon.icon}.webp`" :alt="weapon.name">
+            </button>
+        </div>
     </div>
 
     <br>
 
     <div>
         Available Items:
-        <button v-for="item in items" :key="item.id" @click="addItem(item)" :disabled="itemDisabled(item)">{{ item.name }}</button>
+        <div class="item-wrap">
+            <button v-for="item in items" :key="item.id" @click="addItem(item)" :disabled="itemDisabled(item)" class="item">
+                <img :src="`/items/${item.icon}.webp`" :alt="item.name">
+            </button>
+        </div>
     </div>
 
     <br>
@@ -64,10 +102,11 @@
 <script setup>
     /*
         TODO:
+        - Stop incompatible collabs
         - Load build from URL
+        - Icons for characters and stamps
         - Super items
         - Show character skills
-        - Icons for characters, weapons and items
         - Styling
     */
 
