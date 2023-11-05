@@ -18,6 +18,9 @@
     .item:disabled {
         opacity: 0.4;
     }
+    .item img {
+        max-width: 100%;
+    }
 </style>
 
 <template>
@@ -66,7 +69,11 @@
 
     <div>
         Stamps:
-        <button v-for="stamp in active.stamps" :key="stamp.id" @click="removeStamp(stamp)">{{ stamp.name }}</button>
+        <div class="item-wrap">
+            <button v-for="stamp in active.stamps" :key="stamp.id" @click="removeStamp(stamp)" class="item">
+                <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
+            </button>
+        </div>
     </div>
 
     <br><br>
@@ -95,7 +102,11 @@
 
     <div>
         Available Stamps:
-        <button v-for="stamp in stamps" :key="stamp.id" @click="addStamp(stamp)" :disabled="stampDisabled(stamp)">{{ stamp.name }}</button>
+        <div class="item-wrap">
+            <button v-for="stamp in stamps" :key="stamp.id" @click="addStamp(stamp)" :disabled="stampDisabled(stamp)" class="item">
+                <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
+            </button>
+        </div>
     </div>
 </template>
 
@@ -103,7 +114,7 @@
     /*
         TODO:
         - Load build from URL
-        - Icons for characters and stamps
+        - Icons for characters
         - Super items
         - Show character skills
         - Styling
@@ -189,6 +200,15 @@
     }
 
     function loadBuild() {
+        const params = new URLSearchParams(location.search)
+        if (params.size) {
+            active.character = characters.find(c => c.id === params.get("c")) || ""
+            active.weapons = weapons.filter(w => params.get("w")?.split(",").includes(w.id))
+            active.items = items.filter(i => params.get("i")?.split(",").includes(i.id))
+            active.stamps = stamps.filter(s => params.get("s")?.split(",").includes(s.id))
+            return
+        }
+
         let build = localStorage.getItem("build")
         if (build) {
             try {
@@ -216,6 +236,8 @@
         let items = active.items.map(i => i.id).join(",")
         let stamps = active.stamps.map(s => s.id).join(",")
         let url = `${location.origin}${location.pathname}?c=${character}&w=${weapons}&i=${items}&s=${stamps}`
-        console.log(url)
+
+        navigator.clipboard.writeText(url)
+            .then(() => alert("Copied to clipboard"))
     }
 </script>
