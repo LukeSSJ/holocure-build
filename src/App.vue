@@ -139,29 +139,34 @@
     })
 
     const weaponsUsed = {}
+    let collabs = 0
 
     loadBuild()
 
     function addWeapon(weapon) {
-        if (active.weapons.length < 5 && !active.weapons.includes(weapon)) {
-            active.weapons.push(weapon)
-            weaponsUsed[weapon.id] = true
-            if (weapon.weapons) weapon.weapons.map(id => weaponsUsed[id] = true)
+        active.weapons.push(weapon)
+        weaponsUsed[weapon.id] = true
+        if (weapon.weapons) {
+            weapon.weapons.map(id => weaponsUsed[id] = true)
+            collabs += 1
         }
     }
 
     function addItem(item) {
-        if (active.items.length < 6 && !active.items.includes(item)) active.items.push(item)
+        active.items.push(item)
     }
 
     function addStamp(stamp) {
-        if (active.stamps.length < 3 && !active.stamps.includes(stamp)) active.stamps.push(stamp)
+        active.stamps.push(stamp)
     }
 
     function removeWeapon(weapon) {
         arrayRemove(active.weapons, weapon)
         weaponsUsed[weapon.id] = false
-        if (weapon.weapons) weapon.weapons.map(id => weaponsUsed[id] = false)
+        if (weapon.weapons) {
+            weapon.weapons.map(id => weaponsUsed[id] = false)
+            collabs -= 1
+        }
     }
 
     function removeItem(item) {
@@ -173,19 +178,24 @@
     }
 
     function weaponDisabled(weapon) {
-        return active.weapons.includes(weapon)
+        return active.weapons.length >= 5
+            || active.weapons.includes(weapon)
             || weaponsUsed[weapon.id]
+            || (weapon.weapons && collabs >= 4)
             || (weapon.weapons && weapon.weapons.find(id => weaponsUsed[id]))
             || (weapon.item && active.items.find(i => i.id === weapon.item))
             || (weapon.item && active.weapons.find(w => w.item))
     }
 
     function itemDisabled(item) {
-        return active.items.includes(item) || active.weapons.find(w => w.item === item.id)
+        return active.items.length >= 6
+            || active.items.includes(item)
+            || active.weapons.find(w => w.item === item.id)
     }
 
     function stampDisabled(stamp) {
-        return active.stamps.includes(stamp)
+        return active.stamps.length >= 3
+            || active.stamps.includes(stamp)
     }
 
     function arrayRemove(array, item) {
