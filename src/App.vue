@@ -135,7 +135,7 @@
     })
 
     const activeWeapons = computed(() => {
-        return [active.character.weapon].concat(active.weapons).filter()
+        return [active.character.weapon].concat(active.weapons).filter(w => w)
     })
 
     const weaponsUsed = {}
