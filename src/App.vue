@@ -46,7 +46,7 @@
         <span v-if="active.character">{{ active.character.weapon }}</span>
         <div class="item-wrap">
             <button v-for="weapon in active.weapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
-                <img :src="`/weapons/${weapon.icon}.webp`" :alt="weapon.name">
+                <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
             </button>
         </div>
     </div>
@@ -57,7 +57,7 @@
         Items:
         <div class="item-wrap">
             <button v-for="item in active.items" :key="item.id" @click="removeItem(item)" class="item">
-                <img :src="`/items/${item.icon}.webp`" :alt="item.name">
+                <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
             </button>
         </div>
     </div>
@@ -75,7 +75,7 @@
         Available Weapons:
         <div class="item-wrap">
             <button v-for="weapon in weapons" :key="weapon.id" @click="addWeapon(weapon)" :disabled="weaponDisabled(weapon)" class="item">
-                <img :src="`/weapons/${weapon.icon}.webp`" :alt="weapon.name">
+                <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
             </button>
         </div>
     </div>
@@ -86,7 +86,7 @@
         Available Items:
         <div class="item-wrap">
             <button v-for="item in items" :key="item.id" @click="addItem(item)" :disabled="itemDisabled(item)" class="item">
-                <img :src="`/items/${item.icon}.webp`" :alt="item.name">
+                <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
             </button>
         </div>
     </div>
@@ -164,6 +164,10 @@
     function arrayRemove(array, item) {
         const index = array.indexOf(item)
         if (index !== -1) array.splice(index, 1)
+    }
+
+    function imageUrl(src) {
+        return new URL(src, import.meta.url)
     }
 
     function saveBuild() {
