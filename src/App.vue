@@ -10,7 +10,7 @@
     <div>
         Character:
         <select v-model="active.character">
-            <option :value="null">...</option>
+            <option value="">...</option>
             <option v-for="character in characters" :key="character.id" :value="character">{{ character.name }}</option>
         </select>
     </div>
@@ -64,7 +64,6 @@
 <script setup>
     /*
         TODO:
-        - Only one item collab weapon
         - Super items
         - Show character skills
         - Icons for characters, weapons and items
@@ -75,7 +74,7 @@
     import {characters, weapons, items, stamps} from './data.js'
 
     const active = reactive({
-        character: null,
+        character: '',
         weapons: [],
         items: [],
         stamps: [],
@@ -111,6 +110,7 @@
         return active.weapons.includes(weapon)
             || weapon.weapons?.find(id => active.weapons.find(w => w.id === id))
             || (weapon.item && active.items.find(i => i.id === weapon.item))
+            || (weapon.item && active.weapons.find(w => w.item))
     }
 
     function itemDisabled(item) {
@@ -128,7 +128,7 @@
 
     function saveBuild() {
         const build = {
-            character: active.character.id,
+            character: active.character?.id ?? "",
             weapons: active.weapons.map(w => w.id),
             items: active.items.map(i => i.id),
             stamps: active.stamps.map(s => s.id),
@@ -141,7 +141,7 @@
         if (build) {
             try {
                 build = JSON.parse(build)
-                active.character = characters.find(c => c.id === build.character)
+                active.character = characters.find(c => c.id === build.character) || ""
                 active.weapons = weapons.filter(w => build.weapons.includes(w.id))
                 active.items = items.filter(i => build.items.includes(i.id))
                 active.stamps = stamps.filter(s => build.stamps.includes(s.id))
@@ -151,7 +151,7 @@
 
     function resetBuild() {
         if (confirm("Reset Build?")) {
-            active.character = null
+            active.character = ""
             active.weapons = []
             active.items = []
             active.stamps = []
@@ -159,10 +159,11 @@
     }
 
     function getUrl() {
+        let character = active.character?.id ?? ""
         let weapons = active.weapons.map(w => w.id).join(",")
         let items = active.items.map(i => i.id).join(",")
         let stamps = active.stamps.map(s => s.id).join(",")
-        let url = `${location.origin}?c=${active.character.id}&w=${weapons}&i=${items}&s=${stamps}`
+        let url = `${location.origin}?c=${character}&w=${weapons}&i=${items}&s=${stamps}`
         console.log(url)
     }
 </script>
