@@ -41,22 +41,22 @@ export const characters = [
 ]
 
 export const weapons = [
-    {id: "Spi", name: "Spider Cooking", icon: "Spider_Cooking", weapons: ["Bro", "Eld", "ElC", "Jin"]},
-    {id: "ElB", name: "Elite Lava Bucket", icon: "Elite_Lava_Bucket", weapons: ["ElC", "MiC", "Mik", "Jin"]},
-    {id: "CEO", name: "CEO's Tears", icon: "CEOs_Tears", weapons: ["Bro", "Rin", "Str"]},
-    {id: "Wam", name: "Wamy Water", icon: "Wamy_Water", weapons: ["Fro", "SnF", "SnQ"]},
-    {id: "HoB", name: "Holo Bomb", icon: "Holo_Bomb", weapons: ["Bre", "Fla", "ImD"]},
-    {id: "Psy", name: "Psycho Axe", icon: "Psycho_Axe", weapons: ["BLF", "Cre", "MiC"]},
-    {id: "BLB", name: "BL Book", icon: "BL_Book", weapons: ["BLF", "Fro", "Leg"]},
-    {id: "Cut", name: "Cutting Board", icon: "Cutting_Board", weapons: ["Abs", "Bon", "Fla"]},
-    {id: "Fan", name: "Fan Beam", icon: "Fan_Beam", weapons: ["Dra", "LiB", "Str", "HoF"]},
-    {id: "Plu", name: "Plug Type Asacoco", icon: "Plug_Type_Asacoco", weapons: ["Bre", "Dra", "LiW", "HoF"]},
-    {id: "Glo", name: "Glowstick", icon: "Glowstick", weapons: ["IdC", "LiB", "SnF", "IdL", "SnQ"]},
-    {id: "XPo", name: "X-Potato", icon: "X-Potato", weapons: ["ImD", "MiK", "Rap"]},
-    {id: "IdS", name: "Idol Song", icon: "Idol_Song", weapons: ["Cre", "IdC", "Rap", "IdL"]},
-    {id: "ENC", name: "EN's Curse", icon: "ENs_Curse", weapons: ["Bon", "Cur", "Eld"]},
-    {id: "Bou", name: "Bounce Ball", icon: "Bounce_Ball", weapons: ["Abs", "Cur", "Rin"]},
-    {id: "Sau", name: "Sausage", icon: "Sausage", weapons: ["Leg", "LiW"]},
+    {id: "Spi", name: "Spider Cooking", icon: "Spider_Cooking"},
+    {id: "ElB", name: "Elite Lava Bucket", icon: "Elite_Lava_Bucket"},
+    {id: "CEO", name: "CEO's Tears", icon: "CEOs_Tears"},
+    {id: "Wam", name: "Wamy Water", icon: "Wamy_Water"},
+    {id: "HoB", name: "Holo Bomb", icon: "Holo_Bomb"},
+    {id: "Psy", name: "Psycho Axe", icon: "Psycho_Axe"},
+    {id: "BLB", name: "BL Book", icon: "BL_Book"},
+    {id: "Cut", name: "Cutting Board", icon: "Cutting_Board"},
+    {id: "Fan", name: "Fan Beam", icon: "Fan_Beam"},
+    {id: "Plu", name: "Plug Type Asacoco", icon: "Plug_Type_Asacoco"},
+    {id: "Glo", name: "Glowstick", icon: "Glowstick"},
+    {id: "XPo", name: "X-Potato", icon: "X-Potato"},
+    {id: "IdS", name: "Idol Song", icon: "Idol_Song"},
+    {id: "ENC", name: "EN's Curse", icon: "ENs_Curse"},
+    {id: "Bou", name: "Bounce Ball", icon: "Bounce_Ball"},
+    {id: "Sau", name: "Sausage", icon: "Sausage"},
 
     {id: "Abs", name: "Absolute Wall", icon: "Absolute_Wall", weapons: ["Bou", "Cut"]},
     {id: "BLF", name: "BL Fujoshi", icon: "BL_Fujoshi", weapons: ["BLB", "Psy"]},
@@ -82,10 +82,10 @@ export const weapons = [
     {id: "SnF", name: "Snow Flower Sake", icon: "Snow_Flower_Sake", weapons: ["Glo", "Wam"]},
     {id: "Str", name: "Stream of Tears", icon: "Stream_of_Tears", weapons: ["CEO", "Fan"]},
 
-    {id: "HoF", name: "Holy Fire", icon: "Holy_Fire", weapons: ["Dra"], item: "Gor"},
-    {id: "IdL", name: "Idol Live", icon: "Idol_Live", weapons: ["IdC"], item: "Ido"},
-    {id: "Jin", name: "Jingisukan", icon: "Jingisukan", weapons: ["ElC"], item: "Ube"},
-    {id: "SnQ", name: "Snow Queen", icon: "Snow_Queen", weapons: ["SnF"], item: "Sak"},
+    {id: "HoF", name: "Holy Fire", icon: "Holy_Fire", weapons: ["Dra", "Fan", "Plu"], item: "Gor"},
+    {id: "IdL", name: "Idol Live", icon: "Idol_Live", weapons: ["IdC", "Glo", "Ids"], item: "Ido"},
+    {id: "Jin", name: "Jingisukan", icon: "Jingisukan", weapons: ["ElC", "ElB", "Spi"], item: "Ube"},
+    {id: "SnQ", name: "Snow Queen", icon: "Snow_Queen", weapons: ["SnF", "Glo", "Wam"], item: "Sak"},
 ]
 
 export const items = [

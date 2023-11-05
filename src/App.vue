@@ -102,7 +102,6 @@
 <script setup>
     /*
         TODO:
-        - Stop incompatible collabs
         - Load build from URL
         - Icons for characters and stamps
         - Super items
@@ -120,10 +119,16 @@
         stamps: [],
     })
 
+    const weaponsUsed = {}
+
     loadBuild()
 
     function addWeapon(weapon) {
-        if (active.weapons.length < 5 && !active.weapons.includes(weapon)) active.weapons.push(weapon)
+        if (active.weapons.length < 5 && !active.weapons.includes(weapon)) {
+            active.weapons.push(weapon)
+            weaponsUsed[weapon.id] = true
+            if (weapon.weapons) weapon.weapons.map(id => weaponsUsed[id] = true)
+        }
     }
 
     function addItem(item) {
@@ -136,6 +141,8 @@
 
     function removeWeapon(weapon) {
         arrayRemove(active.weapons, weapon)
+        weaponsUsed[weapon.id] = false
+        if (weapon.weapons) weapon.weapons.map(id => weaponsUsed[id] = false)
     }
 
     function removeItem(item) {
@@ -148,7 +155,8 @@
 
     function weaponDisabled(weapon) {
         return active.weapons.includes(weapon)
-            || weapon.weapons?.find(id => active.weapons.find(w => w.id === id))
+            || weaponsUsed[weapon.id]
+            || (weapon.weapons && weapon.weapons.find(id => weaponsUsed[id]))
             || (weapon.item && active.items.find(i => i.id === weapon.item))
             || (weapon.item && active.weapons.find(w => w.item))
     }
