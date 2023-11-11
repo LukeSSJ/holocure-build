@@ -1,18 +1,34 @@
 <style>
+    * {
+        box-sizing: border-box;
+    }
     body {
         margin: 0;
-        padding: 2rem 1rem;
+        padding: 1rem;
         background: #306080;
         color: white;
         font-size: 1.2rem;
     }
-    .text-header {
-        margin-bottom: 0.5rem;
+    button, select {
+        padding: 0.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: 4px solid white;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+    .button-wrap {
+        display: flex;
+        gap: 0.5rem;
+    }
+    .grid {
+        display: grid;
+        gap: 0.5rem;
     }
     .item-wrap {
         display: flex;
         flex-wrap: wrap;
-        gap: 6px;
+        gap: 0.5rem;
     }
     .item {
         width: 80px;
@@ -26,11 +42,15 @@
     }
     .item img {
         max-width: 100%;
+        max-height: 100%;
+    }
+    .text-header {
+        margin-bottom: 0.5rem;
     }
 </style>
 
 <template>
-    <div>
+    <div class="button-wrap">
         <button @click="saveBuild">Save</button>
         <button @click="resetBuild">Reset</button>
         <button @click="getUrl">Copy URL</button>
@@ -39,45 +59,34 @@
     <br>
 
     <div>
-        Character:
         <select v-model="active.character">
             <option value="">...</option>
             <option v-for="character in characters" :key="character.id" :value="character">{{ character.name }}</option>
         </select>
     </div>
-
     <br>
-
-    <!--<div>Skills</div>-->
-
-    <div>
-        <div class="text-header">Weapons:</div>
+    <div class="grid">
         <div class="item-wrap">
             <button v-for="weapon in activeWeapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
                 <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
             </button>
+            <button class="item" v-for="i in (6 - activeWeapons.length)" :key="i">
+                <img src="/Weapon.webp" alt="">
+            </button>
         </div>
-    </div>
-
-    <br>
-
-    <div>
-        <div class="text-header">Items:</div>
         <div class="item-wrap">
             <button v-for="item in active.items" :key="item.id" @click="removeItem(item)" class="item">
                 <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
             </button>
+            <button class="item" v-for="i in (6 - active.items.length)" :key="i">
+                <img src="/Item.webp" alt="">
+            </button>
         </div>
-    </div>
-
-    <br>
-
-    <div>
-        <div class="text-header">Stamps:</div>
         <div class="item-wrap">
             <button v-for="stamp in active.stamps" :key="stamp.id" @click="removeStamp(stamp)" class="item">
                 <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
             </button>
+            <button class="item" v-for="i in (3 - active.stamps.length)" :key="i"></button>
         </div>
     </div>
 
@@ -118,10 +127,10 @@
 <script setup>
     /*
         TODO:
-        - Icons for characters
-        - Styling
-        - Show character skills
+        - Tool items for weapons/items
+        - Icons/portraits for characters
         - Super items
+        - Show character skills
     */
 
     import {ref, reactive, computed} from 'vue'
