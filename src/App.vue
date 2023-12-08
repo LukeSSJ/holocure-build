@@ -127,8 +127,8 @@
 <script setup>
     /*
         TODO:
-        - Tool items for weapons/items
         - Icons/portraits for characters
+        - Tool tips for weapons/items
         - Super items
         - Show character skills
     */
