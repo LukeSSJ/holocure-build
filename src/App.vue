@@ -17,6 +17,10 @@
         cursor: pointer;
         font-size: 1.2rem;
     }
+    .flex {
+        display: flex;
+        gap: 2rem;
+    }
     .button-wrap {
         display: flex;
         gap: 0.5rem;
@@ -55,38 +59,44 @@
         <button @click="resetBuild">Reset</button>
         <button @click="getUrl">Copy URL</button>
     </div>
-
     <br>
 
-    <div>
-        <select v-model="active.character">
-            <option value="">...</option>
-            <option v-for="character in characters" :key="character.id" :value="character">{{ character.name }}</option>
-        </select>
-    </div>
-    <br>
-    <div class="grid">
-        <div class="item-wrap">
-            <button v-for="weapon in activeWeapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
-                <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
-            </button>
-            <button class="item" v-for="i in (6 - activeWeapons.length)" :key="i">
-                <img src="/Weapon.webp" alt="">
-            </button>
+    <div class="flex">
+        <div>
+            <div>
+                <select v-model="active.character">
+                    <option value="">...</option>
+                    <option v-for="character in characters" :key="character.id" :value="character">{{ character.name }}</option>
+                </select>
+            </div>
+            <br>
+            <div class="grid">
+                <div class="item-wrap">
+                    <button v-for="weapon in activeWeapons" :key="weapon.id" @click="removeWeapon(weapon)" class="item">
+                        <img :src="imageUrl(`/weapons/${weapon.icon}.webp`)" :alt="weapon.name">
+                    </button>
+                    <button class="item" v-for="i in (6 - activeWeapons.length)" :key="i">
+                        <img src="/Weapon.webp" alt="">
+                    </button>
+                </div>
+                <div class="item-wrap">
+                    <button v-for="item in active.items" :key="item.id" @click="removeItem(item)" class="item">
+                        <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
+                    </button>
+                    <button class="item" v-for="i in (6 - active.items.length)" :key="i">
+                        <img src="/Item.webp" alt="">
+                    </button>
+                </div>
+                <div class="item-wrap">
+                    <button v-for="stamp in active.stamps" :key="stamp.id" @click="removeStamp(stamp)" class="item">
+                        <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
+                    </button>
+                    <button class="item" v-for="i in (3 - active.stamps.length)" :key="i"></button>
+                </div>
+            </div>
         </div>
-        <div class="item-wrap">
-            <button v-for="item in active.items" :key="item.id" @click="removeItem(item)" class="item">
-                <img :src="imageUrl(`/items/${item.icon}.webp`)" :alt="item.name">
-            </button>
-            <button class="item" v-for="i in (6 - active.items.length)" :key="i">
-                <img src="/Item.webp" alt="">
-            </button>
-        </div>
-        <div class="item-wrap">
-            <button v-for="stamp in active.stamps" :key="stamp.id" @click="removeStamp(stamp)" class="item">
-                <img :src="imageUrl(`/stamps/${stamp.icon}.webp`)" :alt="stamp.name">
-            </button>
-            <button class="item" v-for="i in (3 - active.stamps.length)" :key="i"></button>
+        <div>
+            <img v-if="active.character" :src="imageUrl(`/portraits/${active.character.id}.webp`)" />
         </div>
     </div>
 
