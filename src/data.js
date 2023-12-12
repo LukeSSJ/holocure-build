@@ -83,7 +83,7 @@ export const weapons = [
     {id: "Str", name: "Stream of Tears", icon: "Stream_of_Tears", weapons: ["CEO", "Fan"]},
 
     {id: "HoF", name: "Holy Fire", icon: "Holy_Fire", weapons: ["Dra", "Fan", "Plu"], item: "Gor"},
-    {id: "IdL", name: "Idol Live", icon: "Idol_Live", weapons: ["IdC", "Glo", "Ids"], item: "Ido"},
+    {id: "IdL", name: "Idol Live", icon: "Idol_Live", weapons: ["IdC", "Glo", "IdS"], item: "Ido"},
     {id: "Jin", name: "Jingisukan", icon: "Jingisukan", weapons: ["ElC", "ElB", "Spi"], item: "Ube"},
     {id: "SnQ", name: "Snow Queen", icon: "Snow_Queen", weapons: ["SnF", "Glo", "Wam"], item: "Sak"},
 ]
