@@ -14,5 +14,8 @@ export default defineConfig({
     }
   },
   base: "https://lukessj.github.io/holocure-build",
-  //build: {minify: false},
+  build: {
+	  //minify: false,
+	  outDir: './docs',
+  },
 })
