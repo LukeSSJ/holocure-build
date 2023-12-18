@@ -149,6 +149,7 @@
     /*
         TODO:
         - Super items
+		- Stats
         - Show character skills
     */
 
