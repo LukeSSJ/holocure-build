@@ -76,7 +76,7 @@
 						@click="removeItem(item)"
 						type="items"
 					/>
-                    <ItemButton class="item" v-for="i in (6 - active.items.length)" :key="i">
+                    <ItemButton v-for="i in (6 - active.items.length)" :key="i">
                         <img src="/Item.webp" alt="">
 					</ItemButton>
                 </div>
@@ -88,7 +88,7 @@
 						@click="removeStamp(stamp)"
 						type="stamps"
 					/>
-                    <ItemButton class="item" v-for="i in (3 - active.stamps.length)" :key="i" />
+                    <ItemButton v-for="i in (3 - active.stamps.length)" :key="i" />
                 </div>
             </div>
         </div>
@@ -148,6 +148,8 @@
 <script setup>
     /*
         TODO:
+		- Ensure item requirements are meet for gold hammer collabs
+		- Stop tooltip going off screen
         - Super items
 		- Stats
         - Show character skills
@@ -213,15 +215,15 @@
             || active.weapons.includes(weapon)
             || weaponsUsed[weapon.id]
             || (weapon.weapons && collabs >= 4)
-            || (weapon.weapons && weapon.weapons.find(id => weaponsUsed[id]))
-            || (weapon.item && active.items.find(i => i.id === weapon.item))
-            || (weapon.item && active.weapons.find(w => w.item))
+            || (weapon.weapons && !!weapon.weapons.find(id => weaponsUsed[id]))
+            || (weapon.item && !!active.items.find(i => i.id === weapon.item))
+            || (weapon.item && !!active.weapons.find(w => w.item))
     }
 
     function itemDisabled(item) {
         return active.items.length >= 6
             || active.items.includes(item)
-            || active.weapons.find(w => w.item === item.id)
+            || !!active.weapons.find(w => w.item === item.id)
     }
 
     function stampDisabled(stamp) {

@@ -53,14 +53,14 @@
 
 <template>
 	<div class="container">
-		<button class="item">
+		<button class="item" :disabled="disabled">
 			<template v-if="item">
 				<img v-if="item" :src="imageUrl(`/${props.type}/${item.icon}.webp`)" :alt="item.name">
 				<img v-if="item && item.weapons" src="/Collab.webp" class="collab-image"/>
 			</template>
 			<slot v-else/>
 		</button>
-		<div class="tooltip">
+		<div v-if="item" class="tooltip">
 			<div class="tooltip-heading">{{ item.name }}</div>
 
 			<div v-if="item.weapons" class="item-container">
@@ -88,6 +88,7 @@ import {weapons, items} from './data.js'
 const props = defineProps({
 	item: Object,
 	type: String,
+	disabled: Boolean,
 })
 const item = props.item
 
