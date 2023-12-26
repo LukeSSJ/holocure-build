@@ -5,11 +5,14 @@
     body {
         margin: 0;
         padding: 1rem;
-		padding-bottom: 4rem;
+		padding-bottom: 2rem;
         background: #306080;
         color: white;
         font-size: 1.2rem;
     }
+	a {
+		color: inherit;
+	}
     button, select {
         padding: 0.5rem;
         background: rgba(0, 0, 0, 0.5);
@@ -38,6 +41,11 @@
     .text-header {
         margin-bottom: 0.5rem;
     }
+	.footer {
+		margin-top: 4rem;
+		font-size: 1rem;
+		color: #d5d5d5;
+	}
 </style>
 <template>
     <div class="button-wrap">
@@ -145,6 +153,10 @@
 			/>
         </div>
     </div>
+
+	<div class="footer">
+		Check out the source code <a href="https://github.com/LukeSSJ/holocure-build" target="_blank">here</a>
+	</div>
 </template>
 <script setup>
     /*
