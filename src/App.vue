@@ -67,7 +67,7 @@
                 <div class="item-wrap">
 					<ItemButton
 						v-for="weapon in activeWeapons"
-						:key="weapon.id"
+						:key="weapon.name"
 						:item="weapon"
 						@click="removeWeapon(weapon)"
 						type="weapons"
@@ -160,6 +160,7 @@
 <script setup>
     /*
         TODO:
+		- Short URLs
 		- Stats
         - Show character skills
         - Super items
@@ -253,6 +254,7 @@
     }
 
     function saveBuild() {
+		console.log("saving")
         const build = {
             character: active.character?.id ?? "",
             weapons: active.weapons.map(w => w.id),
