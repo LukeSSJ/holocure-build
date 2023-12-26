@@ -49,7 +49,6 @@
 </style>
 <template>
     <div class="button-wrap">
-        <button @click="saveBuild">Save</button>
         <button @click="resetBuild">Reset</button>
         <button @click="getUrl">Copy URL</button>
     </div>
@@ -168,7 +167,7 @@
 
 	import ItemButton from './ItemButton.vue'
 
-    import {ref, reactive, computed} from 'vue'
+    import {ref, reactive, computed, watch} from 'vue'
     import {characters, weapons, items, stamps} from './data.js'
 
     const active = reactive({
@@ -186,6 +185,8 @@
     let collabs = 0
 
     loadBuild()
+
+	watch(active, saveBuild);
 
     function addWeapon(weapon) {
         active.weapons.push(weapon)
