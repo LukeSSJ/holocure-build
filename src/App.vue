@@ -158,14 +158,6 @@
 	</div>
 </template>
 <script setup>
-    /*
-        TODO:
-		- Short URLs
-		- Stats
-        - Show character skills
-        - Super items
-    */
-
 	import ItemButton from './ItemButton.vue'
 
     import {ref, reactive, computed, watch} from 'vue'
@@ -254,7 +246,6 @@
     }
 
     function saveBuild() {
-		console.log("saving")
         const build = {
             character: active.character?.id ?? "",
             weapons: active.weapons.map(w => w.id),
