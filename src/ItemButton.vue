@@ -34,6 +34,14 @@
 		background: rgba(0, 0, 0, 0.8);
 		border: 2px solid white;
 	}
+	.tooltip.right {
+		left: auto;
+		right: 0;
+	}
+	.tooltip.top {
+		top: auto;
+		bottom: 82px;
+	}
 	.container:hover .tooltip {
 		display: block
 	}
@@ -53,14 +61,14 @@
 
 <template>
 	<div class="container">
-		<button class="item" :disabled="disabled">
+		<button class="item" @mouseover="onHover" :disabled="disabled">
 			<template v-if="item">
 				<img v-if="item" :src="imageUrl(`/${props.type}/${item.icon}.webp`)" :alt="item.name">
 				<img v-if="item && item.weapons" src="/Collab.webp" class="collab-image"/>
 			</template>
 			<slot v-else/>
 		</button>
-		<div v-if="item" class="tooltip">
+		<div v-if="item" ref="tooltip" class="tooltip">
 			<div class="tooltip-heading">{{ item.name }}</div>
 
 			<div v-if="item.weapons" class="item-container">
@@ -82,7 +90,7 @@
 </template>
 
 <script setup>
-import {computed} from 'vue'
+import {ref, computed} from 'vue'
 import {weapons, items} from './data.js'
 
 const props = defineProps({
@@ -91,6 +99,8 @@ const props = defineProps({
 	disabled: Boolean,
 })
 const item = props.item
+
+const tooltip = ref(null)
 
 const requirements = computed(() => {
 	if (!item) return ''
@@ -113,5 +123,20 @@ function weaponImage(id) {
 function itemImage(id) {
 	const image = items.find(w => w.id === id)
 	return imageUrl(`/items/${image.icon}.webp`)
+}
+
+function onHover(e) {
+	const tip = tooltip.value
+	if (!tip) return
+
+	tip.classList.remove("right", "top")
+
+	const {right, width, bottom, height} = tip.getBoundingClientRect()
+	if (right > window.innerWidth) {
+		tip.classList.add("right")
+	}
+	if (bottom > window.innerHeight) {
+		tip.classList.add("top")
+	}
 }
 </script>

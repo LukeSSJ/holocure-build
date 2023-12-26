@@ -5,6 +5,7 @@
     body {
         margin: 0;
         padding: 1rem;
+		padding-bottom: 4rem;
         background: #306080;
         color: white;
         font-size: 1.2rem;
@@ -148,11 +149,9 @@
 <script setup>
     /*
         TODO:
-		- Ensure item requirements are meet for gold hammer collabs
-		- Stop tooltip going off screen
-        - Super items
 		- Stats
         - Show character skills
+        - Super items
     */
 
 	import ItemButton from './ItemButton.vue'
