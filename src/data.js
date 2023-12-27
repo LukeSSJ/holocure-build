@@ -89,39 +89,209 @@ export const weapons = [
 ]
 
 export const items = [
-    {id: "Sak", name: "Sake", icon: "Sake"},
-    {id: "Lim", name: "Limiter", icon: "Limiter"},
-    {id: "Bod", name: "Body Pillow", icon: "Body_Pillow"},
-    {id: "Inj", name: "Injection Type Asacoco", icon: "Injection_Type_Asacoco"},
-    {id: "Cre", name: "Credit Card", icon: "Credit_Card"},
-    {id: "Hal", name: "Halu", icon: "Halu"},
-    {id: "Kni", name: "Knightly Milk", icon: "Knightly_Milk"},
-    {id: "Fac", name: "Face Mask", icon: "Face_Mask"},
-    {id: "Plu", name: "Plushie", icon: "Plushie"},
-    {id: "Nur", name: "Nurse's Horn", icon: "Nurses_Horn"},
-    {id: "Ful", name: "Full Meal", icon: "Full_Meal"},
-    {id: "Mem", name: "Membership", icon: "Membership"},
-    {id: "Pik", name: "Piki Piki Piman", icon: "Piki_Piki_Piman"},
-    {id: "Hea", name: "Headphones", icon: "Headphones"},
-    {id: "Chi", name: "Chicken's Feather", icon: "Chickens_Feather"},
-    {id: "Gor", name: "Gorilla's Paw", icon: "Gorillas_Paw"},
-    {id: "Ube", name: "Uber Sheep", icon: "Uber_Sheep"},
-    {id: "Ido", name: "Idol Costume", icon: "Idol_Costume"},
-    {id: "Sto", name: "Stolen Piggy Bank", icon: "Stolen_Piggy_Bank"},
-    {id: "Stu", name: "Study Glasses", icon: "Study_Glasses"},
-    {id: "Jus", name: "Just Bandage", icon: "Just_Bandage"},
-    {id: "GWS", name: "GWS Pill", icon: "GWS_Pill"},
-    {id: "Sup", name: "Super Chatto Time!", icon: "Super_Chatto_Time"},
-    {id: "Bre", name: "Breastplate", icon: "Breastplate"},
-    {id: "Hop", name: "Hope Soda", icon: "Hope_Soda"},
-    {id: "Kus", name: "Kusogaki Shackles", icon: "Kusogaki_Shackles"},
-    {id: "Dev", name: "Devil Hat", icon: "Devil_Hat"},
-    {id: "Bla", name: "Blacksmith's Gear", icon: "Blacksmiths_Gear"},
-    {id: "Foc", name: "Focus Shades", icon: "Focus_Shades"},
-    {id: "Nin", name: "Ninja Headband", icon: "Ninja_Headband"},
-    {id: "Res", name: "Researcher's Coat", icon: "Researchers_Coat"},
-    {id: "Can", name: "Candy Kingdom Sweets", icon: "Candy_Kingdom_Sweets"},
-    {id: "Bee", name: "Beetle", icon: "Beetle"},
+    {
+		id: "Sak",
+		name: "Sake",
+		icon: "Sake",
+		description: "Gain 1% crit buff every second up to 10%/15%/20%. If taking damage by a target, lose half the buff. If eating food, +5% crit for 10 seconds.",
+	},
+    {
+		id: "Lim",
+		name: "Limiter",
+		icon: "Limiter",
+		description: "Gain 100%/200%/300% Pick Up Range.",
+	},
+    {
+		id: "Bod",
+		name: "Body Pillow",
+		icon: "Body_Pillow",
+		description: "Gain a shield that absorbs up to 15/20/25/30/35 damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by 10%.",
+	},
+    {
+		id: "Inj",
+		name: "Injection Type Asacoco",
+		icon: "Injection_Type_Asacoco",
+		description: "Lose 5% HP every second (until 1 HP remains), but gain 40%/60%/80% ATK.",
+	},
+    {
+		id: "Cre",
+		name: "Credit Card",
+		icon: "Credit_Card",
+		description: "Cost of enhancing is reduced by 20%/25%/30%/35%/40% and anvils appear 20%/40%/60%/80%/100% more often.",
+	},
+    {
+		id: "Hal",
+		name: "Halu",
+		icon: "Halu",
+		description: "Increase regular fan spawns, and fans become stronger. Gain HoloCoins for every 5/4/3/2/1 target(s) defeated since taking this item.",
+	},
+    {
+		id: "Kni",
+		name: "Knightly Milk",
+		icon: "Knightly_Milk",
+		description: "Increases attack size and knockback of weapons by 10%/15%/20%. Also increase Pick Up Range by 30%/40%/50%.",
+	},
+    {
+		id: "Fac",
+		name: "Face Mask",
+		icon: "Face_Mask",
+		description: "Multiply all damage dealt by 1.3 times and increase Haste by 10%. Take 30% more damage.",
+	},
+    {
+		id: "Plu",
+		name: "Plushie",
+		icon: "Plushie",
+		description: "Delay taken damage. On any hit by a target, take only 30%/20%/10% of the damage initially, then take the remaining damage gradually.",
+	},
+    {
+		id: "Nur",
+		name: "Nurse's Horn",
+		icon: "Nurses_Horn",
+		description: "When defeating a target, there is a 30% chance to life-steal 2/4/6 HP. If taking a hit while HP is less than 15%, there is a chance to heal 20/25/30% HP.",
+	},
+    {
+		id: "Ful",
+		name: "Full Meal",
+		icon: "Full_Meal",
+		description: "All healing is doubled."
+	},
+    {
+		id: "Mem",
+		name: "Membership",
+		icon: "Membership",
+		description: "Lose 3 Holo Coins per second. If Holo Coins is more than 0, increase damage by 30%/40%/50% and take 10%/18%/25% less damage.",
+	},
+    {
+		id: "Pik",
+		name: "Piki Piki Piman",
+		icon: "Piki_Piki_Piman", description: "Gain 15/20/25 Max HP. For every 6/5/4 points of total Max HP, increase damage of Main Weapon and Special attacks by 1%."
+	},
+    {
+		id: "Hea",
+		name: "Headphones",
+		icon: "Headphones",
+		decription: "15%/20%/25%/30%/35% chance to negate 1 hit, and create a shockwave that knocks back all targets."
+	},
+    {
+		id: "Chi",
+		name: "Chicken's Feather",
+		icon: "Chickens_Feather",
+		description: "Gain 1/2/3 revives. On revive, instantly heal 50% HP and all non-Boss targets are defeated."
+	},
+    {
+		id: "Gor",
+		name: "Gorilla's Paw",
+		icon: "Gorillas_Paw",
+		description: "Attack damage is multiplied by 1.2/1.3/1.4 times, but lose 20% critical chance."
+	},
+    {
+		id: "Ube",
+		name: "Uber Sheep",
+		icon: "Uber_Sheep",
+		description: "Every 10/9/8/7/6 seconds, food will drop closeby. Also increase food drop chance from defeated targets by 10%/12%/15%/18%/20%."
+	},
+    {
+		id: "Ido",
+		name: "Idol Costume",
+		icon: "Idol_Costume",
+		description: "Reduce Special cooldown by 20%/25%/30%/35%/40%."
+	},
+    {
+		id: "Ene",
+		name: "Energy Drink",
+		icon: "Energy_Drink",
+		description: "Increase Haste by 10%/15%/20% and SPD by 40%/50%/60%, but reduce Max HP by 20% as well."
+	},
+    {
+		id: "Sto",
+		name: "Stolen Piggy Bank",
+		icon: "Stolen_Piggy_Bank",
+		description: "Gain 1 coin for every 100px/75px/50px traveled and increase SPD by 20%/30%40%. However, reduce Pick Up Range by 30%."
+	},
+    {
+		id: "Stu",
+		name: "Study Glasses",
+		icon: "Study_Glasses",
+		description: "Increase EXP gain by 10%/15%/20%/25%/30%. On every level up, increase Weapon damage by 0.3%."
+	},
+    {
+		id: "Jus",
+		name: "Just Bandage",
+		icon: "Just_Bandage",
+		description: "Increase Max HP by 10/20/30. After being hit, heal 10% HP every 3 seconds until 80%/90%/100% of the damage taken is recovered (recovers minimum 1 HP)."
+	},
+    {
+		id: "GWS",
+		name: "GWS Pill",
+		icon: "GWS_Pill",
+		description: "While the Special meter is still charging, increase crit by 15%/20%/25%."
+	},
+    {
+		id: "Sup",
+		name: "Super Chatto Time!",
+		icon: "Super_Chatto_Time",
+		description: "Targets drop 20%/40%/60%/80%/100% more HoloCoins. All HoloCoins are picked automatically."
+	},
+    {
+		id: "Bre",
+		name: "Breastplate",
+		icon: "Breastplate",
+		description: "Reduce damage taken by 25% and SPD by 10%. When attacked, there is a 50%/60%/70% chance the attacker also takes 200%/250%/300% damage."
+	},
+    {
+		id: "Hop",
+		name: "Hope Soda",
+		icon: "Hope_Soda",
+		description: "Increase critical hit damage by 10%/20%/30%/40%/50%, but increase special cooldown by 25%."
+	},
+    {
+		id: "Kus",
+		name: "Kusogaki Shackles",
+		icon: "Kusogaki_Shackles",
+		description: "Reduce the negative effects of any items by 33%/66%/100%."
+	},
+    {
+		id: "Dev",
+		name: "Devil Hat",
+		icon: "Devil_Hat",
+		description: "Attacks deal 1.2/1.4/1.6 times damage if the target is farther than 130px away from the player. If less than 130px away, damage is reduced by 10%."
+	},
+    {
+		id: "Bla",
+		name: "Blacksmith's Gear",
+		icon: "Blacksmiths_Gear",
+		description: "Normal anvils can be used twice. Weapon enhancements increase damage by (2)/2.5/3 instead of 2 per level."
+	},
+    {
+		id: "Foc",
+		name: "Focus Shades",
+		icon: "Focus_Shades",
+		description: "All ranged or multi-shot projectile attacks have +10%/+20%/+30% chance to crit, and if it does, the target takes 500% of the weapon's damage over 5 seconds."
+	},
+    {
+		id: "Nin",
+		name: "Ninja Headband",
+		icon: "Ninja_Headband",
+		description: ".2/1.4/1.6 times damage if the target is farther than 130px away from the player. If less than 130px away, damage is reduced by 10%."
+	},
+    {
+		id: "Res",
+		name: "Researcher's Coat",
+		icon: "Researchers_Coat",
+		description: "Gain 1% EXP per 2 seconds. When HP is full, the EXP rate slowly increases to 2/3/4% and is reset when taking damage."
+	},
+    {
+		id: "Can",
+		name: "Candy Kingdom Sweets",
+		icon: "Candy_Kingdom_Sweets",
+		description: "Increase haste by 40/50/60%. All attacks deal 0.75x damage, but have a 10% chance to apply a second attack dealing 33% of the initial damage."
+	},
+    {
+		id: "Bee",
+		name: "Beetle",
+		icon: "Beetle",
+		description: "Increased damage of any Character Skill by 33%/66%/100%. Increase it by a further 1% for each player level."
+	},
 ]
 
 export const stamps = [

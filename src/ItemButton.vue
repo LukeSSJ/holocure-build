@@ -27,6 +27,7 @@
 		position: absolute;
 		left: 0;
 		top: 82px;
+		max-width: 400px;
 		z-index: 1;
 		pointer-events: none;
 		width: max-content;
@@ -47,6 +48,12 @@
 	}
 	.tooltip-heading {
 		text-align: left;
+	}
+	.tooltip-description {
+		text-align: left;
+		font-size: 1rem;
+		margin-top: 1rem;
+		line-height: 1.5rem;
 	}
 	.item-container {
 		display: flex;
@@ -70,6 +77,7 @@
 		</button>
 		<div v-if="item" ref="tooltip" class="tooltip">
 			<div class="tooltip-heading">{{ item.name }}</div>
+			<div v-if="item.description" class="tooltip-description">{{ item.description }}</div>
 
 			<div v-if="item.weapons" class="item-container">
 				<template v-for="weapon,i in requirements" :key="weapon">
