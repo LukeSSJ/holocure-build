@@ -9,6 +9,7 @@
         background: #306080;
         color: white;
         font-size: 1.2rem;
+		font-family: 'Fira Sans';
     }
 	a {
 		color: inherit;
