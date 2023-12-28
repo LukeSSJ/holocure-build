@@ -1,91 +1,645 @@
 
 export const characters = [
-    {id: "Ame", name: "🔍 Amelia Watson", weapon: {name: "Pistol Shot", icon: "Pistol_Shot"}},
-    {id: "Gaw", name: "🦈 Gawr Gura", weapon: {name: "Trident Thrust", icon: "Trident_Thrust"}},
-    {id: "Nin", name: "🐙 Ninomae Ina'nis", weapon: {name: "Summon Tentacle", icon: "Summon_Tentacle"}},
-    {id: "Tak", name: "🐔 Takanashi Kiara", weapon: {name: "Phoenix Sword", icon: "Phoenix_Sword"}},
-    {id: "Cal", name: "💀 Calliope Mori", weapon: {name: "Scythe Swing", icon: "Scythe_Swing"}},
-    {id: "Hak", name: "🐀 Hakos Baelz", weapon: {name: "Play Dice", icon: "Play_Dice"}},
-    {id: "Our", name: "⏰ Ouro Kronii", weapon: {name: "Clock Hands", icon: "Clock_Hands"}},
-    {id: "Cer", name: "🌱 Ceres Fauna", weapon: {name: "Nature Shield", icon: "Nature_Shield"}},
-    {id: "Nan", name: "🦉 Nanashi Mumei", weapon: {name: "Bird Feather", icon: "Bird_Feather"}},
-    {id: "Tsu", name: "🪐 Tsukumo Sana", weapon: {name: "Orbit", icon: "Orbit"}},
-    {id: "IRy", name: "🪽  IRyS", weapon: {name: "Nephilim Blast", icon: "Nephilim_Blast"}},
-    {id: "Shi", name: "🦊 Shirakima Fubuki", weapon: {name: "Fox Tail", icon: "Fox_Tail"}},
-    {id: "Ook", name: "🐺 Ookami Mio", weapon: {name: "Tarot Cards", icon: "Tarot_Cards"}},
-    {id: "Nek", name: "🐱 Nekomata Okayu", weapon: {name: "Onigiri", icon: "Onigiri"}},
-    {id: "Inu", name: "🐶 Inugami Korone", weapon: {name: "Orayo!", icon: "Orayo"}},
-    {id: "Tok", name: "⭐ Tokino Sora", weapon: {name: "Bright Star", icon: "Bright_Star"}},
-    {id: "AZK", name: "🎵 AZKi", weapon: {name: "Diva Song", icon: "Diva_Song"}},
-    {id: "Rob", name: "🤖 Roboco-san", weapon: {name: "Hi-Spec Pistol", icon: "Hi-Spec_Pistol"}},
-    {id: "Hos", name: "🪓 Hoshimachi Suisei", weapon: {name: "Axe Swing", icon: "Axe_Swing"}},
-    {id: "Sak", name: "⛩️  Sakura Miko", weapon: {name: "Sakura Gohei", icon: "Sakura_Gohei"}},
-    {id: "Aka", name: "❤️ Akai Haato", weapon: {name: "Red Heart", icon: "Red_Heart"}},
-    {id: "Yoz", name: "🧛 Yozora Mel", weapon: {name: "Kapu Kapu", icon: "Kapu_Kapu"}},
-    {id: "Nat", name: "🥁 Natsuiro Matsuri", weapon: {name: "Ebifrion", icon: "Ebifrion"}},
-    {id: "Aki", name: "💪 Aki Rosenthal", weapon: {name: "Aik", icon: "Aik"}},
-    {id: "Ooz", name: "🦆 Oozora Subaru", weapon: {name: "Baseball Pitch", icon: "Baseball_Pitch"}},
-    {id: "Yuz", name: "💉 Yuzuki Choco", weapon: {name: "Love Needle", icon: "Love_Needle"}},
-    {id: "Mur", name: "🧙 Murasaki Shion", weapon: {name: "Murasaki Bolt", icon: "Murasaki_Bolt"}},
-    {id: "Nak", name: "👺 Nakiri Ayame", weapon: {name: "Dual Katana", icon: "Dual_Katana"}},
-    {id: "Min", name: "🧹 Minato Aqua", weapon: {name: "Cleaning Broom", icon: "Cleaning_Broom"}},
-    {id: "Air", name: "🖌️  Airani lofifteen", weapon: {name: "Paint Brush", icon: "Paint_Brush"}},
-    {id: "Moo", name: "🌙 Moona Hoshinova", weapon: {name: "Crescent Moon", icon: "Crescent_Moon"}},
-    {id: "Ayu", name: "🌰 Ayunda Risu", weapon: {name: "Nuts", icon: "Nuts"}},
-    {id: "Kur", name: "🧟 Kureiji Ollie", weapon: {name: "Path of Sincerity", icon: "Path_of_Sincerity"}},
-    {id: "Pav", name: "🦚 Pavolia Reine", weapon: {name: "Peafowl Feathers", icon: "Peafowl_Feathers"}},
-    {id: "Any", name: "🗡️  Anya Melfissa", weapon: {name: "Keris", icon: "Keris"}},
-    {id: "Kob", name: "🌊 Kobo Kanaeru", weapon: {name: "Umbrella", icon: "Umbrella"}},
-    {id: "Kae", name: "🐧 Kaela Kovalskia", weapon: {name: "Blacksmith Hammer", icon: "Blacksmith_Hammer"}},
-    {id: "Ves", name: "🔫 Vestia Zeta", weapon: {name: "Silencer Pistol", icon: "Silencer_Pistol"}},
+    {
+		id: "Ame",
+		name: "🔍 Amelia Watson",
+		weapon: {
+			name: "Pistol Shot",
+			icon: "Pistol_Shot",
+			description: "Shoots 3 Projectiles forward.",
+		}
+	},
+    {
+		id: "Gaw",
+		name: "🦈 Gawr Gura",
+		weapon: {
+			name: "Trident Thrust",
+			icon: "Trident_Thrust",
+			description: "Mid ranged stab attack in front.",
+		}
+	},
+    {
+		id: "Nin",
+		name: "🐙 Ninomae Ina'nis",
+		weapon: {
+			name: "Summon Tentacle",
+			icon: "Summon_Tentacle",
+			description: "A tentacle shoots out in front.",
+		}
+	},
+    {
+		id: "Tak",
+		name: "🐔 Takanashi Kiara",
+		weapon: {
+			name: "Phoenix Sword",
+			icon: "Phoenix_Sword",
+			description: "Short ranged slash in front.",
+		}
+	},
+    {
+		id: "Cal",
+		name: "💀 Calliope Mori",
+		weapon: {
+			name: "Scythe Swing",
+			icon: "Scythe_Swing",
+			description: "Swings in a half circle arc in front. ",
+		}
+	},
+    {
+		id: "Hak",
+		name: "🐀 Hakos Baelz",
+		weapon: {
+			name: "Play Dice",
+			icon: "Play_Dice",
+			description: "Throw out a dice. The number on the dice determines the damage.",
+		}
+	},
+    {
+		id: "Our",
+		name: "⏰ Ouro Kronii",
+		weapon: {
+			name: "Clock Hands",
+			icon: "Clock_Hands",
+			description: "Stab forward with a large clock hand, and at a random target with the smaller clock hand.",
+		}
+	},
+    {
+		id: "Cer",
+		name: "🌱 Ceres Fauna",
+		weapon: {
+			name: "Nature Shield",
+			icon: "Nature_Shield",
+			description: "Create 3 razor sharp leaves that spiral outward.",
+		}
+	},
+    {
+		id: "Nan",
+		name: "🦉 Nanashi Mumei",
+		weapon: {
+			name: "Bird Feather",
+			icon: "Bird_Feather",
+			description: "Shoot a bunch of feathers at a spread. Pierces through targets.",
+		}
+	},
+    {
+		id: "Tsu",
+		name: "🪐 Tsukumo Sana",
+		weapon: {
+			name: "Orbit",
+			icon: "Orbit",
+			description: "Create an orbiting planet. Hits multiple targets.",
+		}
+	},
+    {
+		id: "IRy",
+		name: "🪽  IRyS",
+		weapon: {
+			name: "Nephilim Blast",
+			icon: "Nephilim_Blast",
+			description: "Shoots dual light and dark blast.",
+		}
+	},
+    {
+		id: "Shi",
+		name: "🦊 Shirakima Fubuki",
+		weapon: {
+			name: "Fox Tail",
+			icon: "Fox_Tail",
+			description: "Swipes Tail in front at close range.",
+		}
+	},
+    {
+		id: "Ook",
+		name: "🐺 Ookami Mio",
+		weapon: {
+			name: "Tarot Cards",
+			icon: "Tarot_Cards",
+			description: "Throw a card that quickly returns back.",
+		}
+	},
+    {
+		id: "Nek",
+		name: "🐱 Nekomata Okayu",
+		weapon: {
+			name: "Onigiri",
+			icon: "Onigiri",
+			description: "Throw an onigiri in an arc.",
+		}
+	},
+    {
+		id: "Inu",
+		name: "🐶 Inugami Korone",
+		weapon: {
+			name: "Orayo!",
+			icon: "Orayo",
+			description: "Punch towards the front in a random cone.",
+		}
+	},
+    {
+		id: "Tok",
+		name: "⭐ Tokino Sora",
+		weapon: {
+			name: "Bright Star",
+			icon: "Bright_Star",
+			description: "Shoot forward a spinning star.",
+		}
+	},
+    {
+		id: "AZK",
+		name: "🎵 AZKi",
+		weapon: {
+			name: "Diva Song",
+			icon: "Diva_Song",
+			description: "Send a flying music note in front.",
+		}
+	},
+    {
+		id: "Rob",
+		name: "🤖 Roboco-san",
+		weapon: {
+			name: "Hi-Spec Pistol",
+			icon: "Hi-Spec_Pistol",
+			description: "Shoots a few times in aimed direction.",
+		}
+	},
+    {
+		id: "Hos",
+		name: "🪓 Hoshimachi Suisei",
+		weapon: {
+			name: "Axe Swing",
+			icon: "Axe_Swing",
+			description: "Swing a bloody axe in an arc in front.",
+		}
+	},
+    {
+		id: "Sak",
+		name: "⛩️  Sakura Miko",
+		weapon: {
+			name: "Sakura Gohei",
+			icon: "Sakura_Gohei",
+			description: "Swing a gohei that creates a burst of Sakura blossoms.",
+		}
+	},
+    {
+		id: "Aka",
+		name: "❤️ Akai Haato",
+		weapon: {
+			name: "Red Heart",
+			icon: "Red_Heart",
+			description: "Create big red hearts. In Haato form, hearts knock enemies back. In Haachama form, damage is increased by 50%.",
+		}
+	},
+    {
+		id: "Yoz",
+		name: "🧛 Yozora Mel",
+		weapon: {
+			name: "Kapu Kapu",
+			icon: "Kapu_Kapu",
+			description: "Bite targets in front",
+		}
+	},
+    {
+		id: "Nat",
+		name: "🥁 Natsuiro Matsuri",
+		weapon: {
+			name: "Ebifrion",
+			icon: "Ebifrion",
+			description: "Swings a large Ebifrion following aimed direction",
+		}
+	},
+    {
+		id: "Aki",
+		name: "💪 Aki Rosenthal",
+		weapon: {
+			name: "Aik",
+			icon: "Aik",
+			description: "Sends Aik to the closest as well as random targets and fires a beam.",
+		}
+	},
+    {
+		id: "Ooz",
+		name: "🦆 Oozora Subaru",
+		weapon: {
+			name: "Baseball Pitch",
+			icon: "Baseball_Pitch",
+			description: "Throws a very fast baseball in front.",
+		}
+	},
+    {
+		id: "Yuz",
+		name: "💉 Yuzuki Choco",
+		weapon: {
+			name: "Love Needle",
+			icon: "Love_Needle",
+			description: "Thrust a giant needle in front.",
+		}
+	},
+    {
+		id: "Mur",
+		name: "🧙 Murasaki Shion",
+		weapon: {
+			name: "Murasaki Bolt",
+			icon: "Murasaki_Bolt",
+			description: "Fires a quick magic bolt in front.",
+		}
+	},
+    {
+		id: "Nak",
+		name: "👺 Nakiri Ayame",
+		weapon: {
+			name: "Dual Katana",
+			icon: "Dual_Katana",
+			description: "Slashes twice in front.",
+		}
+	},
+    {
+		id: "Min",
+		name: "🧹 Minato Aqua",
+		weapon: {
+			name: "Cleaning Broom",
+			icon: "Cleaning_Broom",
+			description: "Throws a large spinning broom.",
+		}
+	},
+    {
+		id: "Air",
+		name: "🖌️  Airani lofifteen",
+		weapon: {
+			name: "Paint Brush",
+			icon: "Paint_Brush",
+			description: "Swings a giant paintbrush in front.",
+		}
+	},
+    {
+		id: "Moo",
+		name: "🌙 Moona Hoshinova",
+		weapon: {
+			name: "Crescent Moon",
+			icon: "Crescent_Moon",
+			description: "Throw a spinning crescent at an arc in front.",
+		}
+	},
+    {
+		id: "Ayu",
+		name: "🌰 Ayunda Risu",
+		weapon: {
+			name: "Nuts",
+			icon: "Nuts",
+			description: "Throws several nuts in front.",
+		}
+	},
+    {
+		id: "Kur",
+		name: "🧟 Kureiji Ollie",
+		weapon: {
+			name: "Path of Sincerity",
+			icon: "Path_of_Sincerity",
+			description: "Long slash forward.",
+		}
+	},
+    {
+		id: "Pav",
+		name: "🦚 Pavolia Reine",
+		weapon: {
+			name: "Peafowl Feathers",
+			icon: "Peafowl_Feathers",
+			description: "Shoots a spread of feathers in fron and back.",
+		}
+	},
+    {
+		id: "Any",
+		name: "🗡️  Anya Melfissa",
+		weapon: {
+			name: "Keris",
+			icon: "Keris",
+			description: "Summons daggers that fly forward.",
+		}
+	},
+    {
+		id: "Kob",
+		name: "🌊 Kobo Kanaeru",
+		weapon: {
+			name: "Umbrella",
+			icon: "Umbrella",
+			description: "Shoots a high speed piercing bullet. If Zeta is invisible, pistol becomes a wide-area instant shot.",
+		}
+	},
+    {
+		id: "Kae",
+		name: "🐧 Kaela Kovalskia",
+		weapon: {
+			name: "Blacksmith Hammer",
+			icon: "Blacksmith_Hammer",
+			description: "Swings a hammer in front.",
+		}
+	},
+    {
+		id: "Ves",
+		name: "🔫 Vestia Zeta",
+		weapon: {
+			name: "Silencer Pistol",
+			icon: "Silencer_Pistol",
+			description: "Swings umbrella in front.",
+		}
+	},
 ]
 
 export const weapons = [
-    {id: "Spi", name: "Spider Cooking", icon: "Spider_Cooking"},
-    {id: "ElB", name: "Elite Lava Bucket", icon: "Elite_Lava_Bucket"},
-    {id: "CEO", name: "CEO's Tears", icon: "CEOs_Tears"},
-    {id: "Wam", name: "Wamy Water", icon: "Wamy_Water"},
-    {id: "HoB", name: "Holo Bomb", icon: "Holo_Bomb"},
-    {id: "Psy", name: "Psycho Axe", icon: "Psycho_Axe"},
-    {id: "BLB", name: "BL Book", icon: "BL_Book"},
-    {id: "Cut", name: "Cutting Board", icon: "Cutting_Board"},
-    {id: "Fan", name: "Fan Beam", icon: "Fan_Beam"},
-    {id: "Plu", name: "Plug Type Asacoco", icon: "Plug_Type_Asacoco"},
-    {id: "Glo", name: "Glowstick", icon: "Glowstick"},
-    {id: "XPo", name: "X-Potato", icon: "X-Potato"},
-    {id: "IdS", name: "Idol Song", icon: "Idol_Song"},
-    {id: "ENC", name: "EN's Curse", icon: "ENs_Curse"},
-    {id: "Bou", name: "Bounce Ball", icon: "Bounce_Ball"},
-    {id: "Sau", name: "Sausage", icon: "Sausage"},
+    {
+		id: "Spi",
+		name: "Spider Cooking",
+		icon: "Spider_Cooking",
+		description: "Create an area of Miasma around, dealing slow damage to enemies inside.",
+	},
+    {
+		id: "ElB",
+		name: "Elite Lava Bucket",
+		icon: "Elite_Lava_Bucket",
+		description: "Drop lava on the ground, burning targets slowly.",
+	},
+    {
+		id: "CEO",
+		name: "CEO's Tears",
+		icon: "CEOs_Tears",
+		description: "Fires rapid tears at random targets.",
+	},
+    {
+		id: "Wam",
+		name: "Wamy Water",
+		icon: "Wamy_Water",
+		description: "Create a splash of unknown water in front, knocking targets back.",
+	},
+    {
+		id: "HoB",
+		name: "Holo Bomb",
+		icon: "Holo_Bomb",
+		description: "A bomb that explodes, dealing damage to all nearby targets.",
+	},
+    {
+		id: "Psy",
+		name: "Psycho Axe",
+		icon: "Psycho_Axe",
+		description: "Throw an axe that spirals outward from the player.",
+	},
+    {
+		id: "BLB",
+		name: "BL Book",
+		icon: "BL_Book",
+		description: "Repel targets with orbiting BL Books.",
+	},
+    {
+		id: "Cut",
+		name: "Cutting Board",
+		icon: "Cutting_Board",
+		description: "Create a defensive wall that damages targets behind you. Effectiveness is increased on certain characters.",
+	},
+    {
+		id: "Fan",
+		name: "Fan Beam",
+		icon: "Fan_Beam",
+		description: "Shoot a powerful laser beam from the microphone. Horizontal Only.",
+	},
+    {
+		id: "Plu",
+		name: "Plug Type Asacoco",
+		icon: "Plug_Type_Asacoco",
+		description: "Fire a fast piercing tail targeted at a random target.",
+	},
+    {
+		id: "Glo",
+		name: "Glowstick",
+		icon: "Glowstick",
+		description: "Throw a glowstick to a nearby target and then spins back to player.",
+	},
+    {
+		id: "XPo",
+		name: "X-Potato",
+		icon: "X-Potato",
+		description: "Throw a potato that bounces around the screen before exploding into an X.",
+	},
+    {
+		id: "IdS",
+		name: "Idol Song",
+		icon: "Idol_Song",
+		description: "Magical music notes that float vertically in both directions.",
+	},
+    {
+		id: "ENC",
+		name: "EN's Curse",
+		icon: "ENs_Curse",
+		description: "Fires cursed energy in front. On hit, there is a chance to spread another Curse towards another nearby target.",
+	},
+    {
+		id: "Bou",
+		name: "Bounce Ball",
+		icon: "Bounce_Ball",
+		description: "Drops a falling bounce ball on a random target. Size of ball varies between characters.",
+	},
+    {
+		id: "Sau",
+		name: "Sausage",
+		icon: "Sausage",
+		description: "If there are targets nearby, swings a small sausage towards the closest target.",
+	},
 
-    {id: "Abs", name: "Absolute Wall", icon: "Absolute_Wall", weapons: ["Bou", "Cut"]},
-    {id: "BLF", name: "BL Fujoshi", icon: "BL_Fujoshi", weapons: ["BLB", "Psy"]},
-    {id: "Bon", name: "Bone Bros.", icon: "Bone_Bros", weapons: ["Cut", "ENC"]},
-    {id: "Bre", name: "Breathe-In Type Asacoco", icon: "Breathe-In_Type_Asacoco", weapons: ["HoB", "Plu"]},
-    {id: "Bro", name: "Broken Dreams", icon: "Broken_Dreams", weapons: ["CEO", "Spi"]},
-    {id: "Cre", name: "Crescent Bardiche", icon: "Crescent_Bardiche", weapons: ["IdS", "Psy"]},
-    {id: "Cur", name: "Curse Ball", icon: "Curse_Ball", weapons: ["Bou", "ENC"]},
-    {id: "Dra", name: "Dragon Fire", icon: "Dragon_Fire", weapons: ["Fan", "Plu"]},
-    {id: "Eld", name: "Eldritch Horror", icon: "Eldritch_Horror", weapons: ["ENC", "Spi"]},
-    {id: "ElC", name: "Elite Cooking", icon: "Elite_Cooking", weapons: ["ElB", "Spi"]},
-    {id: "Fla", name: "Flattening Board", icon: "Flattening_Board", weapons: ["Cut", "HoB"]},
-    {id: "Fro", name: "Frozen Sea", icon: "Frozen_Sea", weapons: ["BLB", "Wam"]},
-    {id: "IdC", name: "Idol Concert", icon: "Idol_Concert", weapons: ["Glo", "IdS"]},
-    {id: "ImD", name: "I'm Die, Thank You Forever", icon: "Im_Die_Thank_You_Forever", weapons: ["HoB", "XPo"]},
-    {id: "Leg", name: "Legendary Sausage", icon: "Legendary_Sausage", weapons: ["BLB", "Sau"]},
-    {id: "LiB", name: "Light Beam", icon: "Light_Beam", weapons: ["Fan", "Glo"]},
-    {id: "LiW", name: "Lightning Wiener", icon: "Lightning_Wiener", weapons: ["Plu", "Sau"]},
-    {id: "MiC", name: "MiComet", icon: "MiComet", weapons: ["ElB", "Psy"]},
-    {id: "MiK", name: "MiKorone", icon: "MiKorone", weapons: ["ElB", "XPo"]},
-    {id: "Rap", name: "Rap Dog", icon: "Rap_Dog", weapons: ["IdS", "XPo"]},
-    {id: "Rin", name: "Ring Of Fitness", icon: "Ring_Of_Fitness", weapons: ["Bou", "CEO"]},
-    {id: "SnF", name: "Snow Flower Sake", icon: "Snow_Flower_Sake", weapons: ["Glo", "Wam"]},
-    {id: "Str", name: "Stream of Tears", icon: "Stream_of_Tears", weapons: ["CEO", "Fan"]},
+	// Collabs
 
-    {id: "HoF", name: "Holy Fire", icon: "Holy_Fire", weapons: ["Dra", "Fan", "Plu"], item: "Gor"},
-    {id: "IdL", name: "Idol Live", icon: "Idol_Live", weapons: ["IdC", "Glo", "IdS"], item: "Ido"},
-    {id: "Jin", name: "Jingisukan", icon: "Jingisukan", weapons: ["ElC", "ElB", "Spi"], item: "Ube"},
-    {id: "SnQ", name: "Snow Queen", icon: "Snow_Queen", weapons: ["SnF", "Glo", "Wam"], item: "Sak"},
+    {
+		id: "Abs",
+		name: "Absolute Wall",
+		icon: "Absolute_Wall",
+		weapons: ["Bou", "Cut"],
+		description: "Summon forth the Great Wall of Hololive. Has a small chance to protect from projectiles.",
+	},
+    {
+		id: "BLF",
+		name: "BL Fujoshi",
+		icon: "BL_Fujoshi",
+		weapons: ["BLB", "Psy"],
+		description: "Endless BL, how shameless!",
+	},
+    {
+		id: "Bon",
+		name: "Bone Bros.",
+		icon: "Bone_Bros",
+		weapons: ["Cut", "ENC"],
+		description: "Don't bite the hand that feeds you if it's holding a knife.",
+	},
+    {
+		id: "Bre",
+		name: "Breathe-In Type Asacoco",
+		icon: "Breathe-In_Type_Asacoco",
+		weapons: ["HoB", "Plu"],
+		description: "Limited time only for 5000 yen!!!",
+	},
+    {
+		id: "Bro",
+		name: "Broken Dreams",
+		icon: "Broken_Dreams",
+		weapons: ["CEO", "Spi"],
+		description: "The dream is dead and there is no hope. Bubble Shield also slows targets.",
+	},
+    {
+		id: "Cre",
+		name: "Crescent Bardiche",
+		icon: "Crescent_Bardiche",
+		weapons: ["IdS", "Psy"],
+		description: "A large halberd that deals high critical damage, and summons falling stars.",
+	},
+    {
+		id: "Cur",
+		name: "Curse Ball",
+		icon: "Curse_Ball",
+		weapons: ["Bou", "ENC"],
+		description: "Play ball! The more you play, the longer it stays.",
+	},
+    {
+		id: "Dra",
+		name: "Dragon Fire",
+		icon: "Dragon_Fire",
+		weapons: ["Fan", "Plu"],
+		description: "The power of a once LEGENDARY Dragon. The OG.",
+	},
+    {
+		id: "Eld",
+		name: "Eldritch Horror",
+		icon: "Eldritch_Horror",
+		weapons: ["ENC", "Spi"],
+		description: "Summons unknown horrors. May Life-steal up to 5% HP from targets defeated in whirlpool.",
+	},
+    {
+		id: "ElC",
+		name: "Elite Cooking",
+		icon: "Elite_Cooking",
+		weapons: ["ElB", "Spi"],
+		description: "May have severe unknown side effects if consumed.",
+	},
+    {
+		id: "Fla",
+		name: "Flattening Board",
+		icon: "Flattening_Board",
+		weapons: ["Cut", "HoB"],
+		description: "Feel the wrath of cutting boards...!?",
+	},
+    {
+		id: "Fro",
+		name: "Frozen Sea",
+		icon: "Frozen_Sea",
+		weapons: ["BLB", "Wam"],
+		description: "Endless waves of ice that slows targets.",
+	},
+    {
+		id: "IdC",
+		name: "Idol Concert",
+		icon: "Idol_Concert",
+		weapons: ["Glo", "IdS"],
+		description: "Throw glowstick in all directions that explode into song!",
+	},
+    {
+		id: "ImD",
+		name: "I'm Die, Thank You Forever",
+		icon: "Im_Die_Thank_You_Forever",
+		weapons: ["HoB", "XPo"],
+		description: "Throw a Bomb that attaches to a target. When target is defeated, the bomb explodes.",
+	},
+    {
+		id: "Leg",
+		name: "Legendary Sausage",
+		icon: "Legendary_Sausage",
+		weapons: ["BLB", "Sau"],
+		description: "A continuously spinning sausage. Spins faster as you move.",
+	},
+    {
+		id: "LiB",
+		name: "Light Beam",
+		icon: "Light_Beam",
+		weapons: ["Fan", "Glo"],
+		description: "Throw glowsticks that explode into targeted beams!",
+	},
+    {
+		id: "LiW",
+		name: "Lightning Wiener",
+		icon: "Lightning_Wiener",
+		weapons: ["Plu", "Sau"],
+		description: "Shoots Lightning charged weiners that home into targets, and summons lightning to strike down when hit.",
+	},
+    {
+		id: "MiC",
+		name: "MiComet",
+		icon: "MiComet",
+		weapons: ["ElB", "Psy"],
+		description: "Real business partners.",
+	},
+    {
+		id: "MiK",
+		name: "MiKorone",
+		icon: "MiKorone",
+		weapons: ["ElB", "XPo"],
+		description: "Burning hot potatos fall, and targets hit by it leave lava pools as they move.",
+	},
+    {
+		id: "Rap",
+		name: "Rap Dog",
+		icon: "Rap_Dog",
+		weapons: ["IdS", "XPo"],
+		description: "Drop some HOT BEATS where targets hit take 20% more damage.",
+	},
+    {
+		id: "Rin",
+		name: "Ring Of Fitness",
+		icon: "Ring_Of_Fitness",
+		weapons: ["Bou", "CEO"],
+		description: "Continuously throw a ring of fitness balls. Hope nobody walks in.",
+	},
+    {
+		id: "SnF",
+		name: "Snow Flower Sake",
+		icon: "Snow_Flower_Sake",
+		weapons: ["Glo", "Wam"],
+		description: "Throw a bottle that shatters into a Snowflake. Has a 30% chance to cause Frozen.",
+	},
+    {
+		id: "Str",
+		name: "Stream of Tears",
+		icon: "Stream_of_Tears",
+		weapons: ["CEO", "Fan"],
+		description: "Nothing can stop the stream of tears.",
+	},
+
+	// Item collabs
+
+    {
+		id: "HoF",
+		name: "Holy Fire",
+		icon: "Holy_Fire",
+		weapons: ["Dra", "Fan", "Plu"],
+		item: "Gor",
+		description: "Spits flames which contain the strength of 50kg(?). All attack damage is also multiplied 1.3 times",
+	},
+    {
+		id: "IdL",
+		name: "Idol Live",
+		icon: "Idol_Live",
+		weapons: ["IdC", "Glo", "IdS"],
+		item: "Ido",
+		description: "Put on a Special Live! Reduce Special Cooldown by 30%. Whenever activating the special, increase all stats by 50% for 10 seconds (can only activate once per 30 seconds)",
+	},
+    {
+		id: "Jin",
+		name: "Jingisukan",
+		icon: "Jingisukan",
+		weapons: ["ElC", "ElB", "Spi"],
+		item: "Ube",
+		description: "Throws delicious grilled lamb all around. Standing inside the Jingisukan areas heals 3 HP per second (Considered as Food heal). Also increase Max HP by 100.",
+	},
+    {
+		id: "SnQ",
+		name: "Snow Queen",
+		icon: "Snow_Queen",
+		weapons: ["SnF", "Glo", "Wam"],
+		description: "Freeze everything around, dealing constant damage. Also increase Crit chance by 20%.",
+		item: "Sak",
+	},
 ]
 
 export const items = [
@@ -295,24 +849,124 @@ export const items = [
 ]
 
 export const stamps = [
-    {id: "ATK", name: "ATK Up Stamp", icon: "ATK_Up_Stamp"},
-    {id: "Bom", name: "Bomb Stamp", icon: "Bomb_Stamp"},
-    {id: "Col", name: "Cold Stamp", icon: "Cold_Stamp"},
-    {id: "Cri", name: "Crit Up Stamp", icon: "Crit_Up_Stamp"},
-    {id: "Gre", name: "Greed Stamp", icon: "Greed_Stamp"},
-    {id: "Has", name: "Haste Up Stamp", icon: "Haste_Up_Stamp"},
-    {id: "Kno", name: "Knockback Stamp", icon: "Knockback_Stamp"},
-    {id: "Lif", name: "Life Steal Stamp", icon: "Life_Steal_Stamp"},
-    {id: "Lig", name: "Lightness Stamp", icon: "Lightness_Stamp"},
-    {id: "Mar", name: "Marking Stamp", icon: "Marking_Stamp"},
-    {id: "Pac", name: "Pacifist Stamp", icon: "Pacifist_Stamp"},
-    {id: "Pro", name: "Projectile Up Stamp", icon: "Projectile_Up_Stamp"},
-    {id: "Rev", name: "Reverse Stamp", icon: "Reverse_Stamp"},
-    {id: "RGB", name: "RGB Stamp", icon: "RGB_Stamp"},
-    {id: "Siz", name: "Size Up Stamp", icon: "Size_Up_Stamp"},
-    {id: "Slo", name: "Slow Stamp", icon: "Slow_Stamp"},
-    {id: "Sol", name: "Solo Stamp", icon: "Solo_Stamp"},
-    {id: "Tru", name: "Trumpet Stamp", icon: "Trumpet_Stamp"},
-    {id: "Uni", name: "Unit Stamp", icon: "Unit_Stamp"},
-    {id: "Wea", name: "Weaken Stamp", icon: "Weaken_Stamp"},
+    {
+		id: "ATK",
+		name: "ATK Up Stamp",
+		icon: "ATK_Up_Stamp",
+		description: "Increase damage of weapon by 25% and crit damage by 15%.",
+	},
+    {
+		id: "Bom",
+		name: "Bomb Stamp",
+		icon: "Bomb_Stamp",
+		description: "Attacks have a 30% chance to cause an explosion that hits nearby targets for 30% of the weapon's damage.",
+	},
+    {
+		id: "Col",
+		name: "Cold Stamp",
+		icon: "Cold_Stamp",
+		description: "On hit, if the player does not get attacked by the target for 4 seconds, the target may become Frozen and take 70% cold damage for 3 seconds.",
+	},
+    {
+		id: "Cri",
+		name: "Crit Up Stamp",
+		icon: "Crit_Up_Stamp",
+		description: "Increase the chance of critical hits caused by this weapon by 30%.",
+	},
+    {
+		id: "Gre",
+		name: "Greed Stamp",
+		icon: "Greed_Stamp",
+		description: "Attacks have a 5% chance to hit HoloCoins out of targets per hit. Chance and amount is increased for every 10 damage dealt.",
+	},
+    {
+		id: "Has",
+		name: "Haste Up Stamp",
+		icon: "Haste_Up_Stamp",
+		description: "Reduce the time between attacks by 25%.",
+	},
+    {
+		id: "Kno",
+		name: "Knockback Stamp",
+		icon: "Knockback_Stamp",
+		description: "Weapon causes small knockback. Increase knockback strength by 100% if effect already exists.",
+	},
+    {
+		id: "Lif",
+		name: "Life Steal Stamp",
+		icon: "Life_Steal_Stamp",
+		description: "Once per second, Weapon attacks may heal a random amount up to 15% of Max HP.",
+	},
+    {
+		id: "Lig",
+		name: "Lightness Stamp",
+		icon: "Lightness_Stamp",
+		description: "Decrease damage of the main weapon by 20%, and increasing SPD of the character by 40%.",
+	},
+    {
+		id: "Mar",
+		name: "Marking Stamp",
+		icon: "Marking_Stamp",
+		description: "The first target this weapon hits is marked. The marked target will receive 30% of the damage inflicted on any other targets.",
+	},
+    {
+		id: "Pac",
+		name: "Pacifist Stamp",
+		icon: "Pacifist_Stamp",
+		description: "Weapon hits have a 30% chance to stun enemies temporarily. Also has a 40% chance to destroy enemy projectiles.",
+	},
+    {
+		id: "Pro",
+		name: "Projectile Up Stamp",
+		icon: "Projectile_Up_Stamp",
+		description: "Adds 2 additional shots to ranged multi-shot weapons.",
+	},
+    {
+		id: "Rev",
+		name: "Reverse Stamp",
+		icon: "Reverse_Stamp",
+		description: "Weapon will fire backwards. There is no other effect.",
+	},
+    {
+		id: "RGB",
+		name: "RGB Stamp",
+		icon: "RGB_Stamp",
+		description: "Weapon attacks will look pretty. There is no other effect.",
+	},
+    {
+		id: "Siz",
+		name: "Size Up Stamp",
+		icon: "Size_Up_Stamp",
+		description: "Increase attack size by 25%.",
+	},
+    {
+		id: "Slo",
+		name: "Slow Stamp",
+		icon: "Slow_Stamp",
+		description: "Attacks have a 30% chance to slow targets by 25% and deal 50% weapon damage for 5 seconds.",
+	},
+    {
+		id: "Sol",
+		name: "Solo Stamp",
+		icon: "Solo_Stamp",
+		description: "Increase damage by 15% for each empty weapon slot.",
+	},
+    {
+		id: "Tru",
+		name: "Trumpet Stamp",
+		icon: "Trumpet_Stamp",
+		description: "Weapon will sound like a trumpet. There is no other effect.",
+	},
+    {
+		id: "Uni",
+		name: "Unit Stamp",
+		icon: "Unit_Stamp",
+		description: "Decrease damage of the main weapon by 50%, but increase the damage of all other weapons by 8%.",
+	},
+    {
+		id: "Wea",
+		name: "Weaken Stamp",
+		icon: "Weaken_Stamp",
+		description: "Attacks have a 30% chance to reduce ATK and DEF of targets by 30% and 10% temporarily. Flower.",
+	},
 ]
