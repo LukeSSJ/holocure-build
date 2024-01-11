@@ -283,10 +283,12 @@
     }
 
     function loadBuild() {
+		active.weapons = []
+
         const params = new URLSearchParams(location.search)
         if (params.size) {
             active.character = characters.find(c => c.id === params.get("c")) || ""
-            active.weapons = weapons.filter(w => params.get("w")?.split(",").includes(w.id))
+            weapons.filter(w => params.get("w")?.split(",").includes(w.id)).map(addWeapon)
             active.items = items.filter(i => params.get("i")?.split(",").includes(i.id))
             active.stamps = stamps.filter(s => params.get("s")?.split(",").includes(s.id))
 			active.food = recipes.find(r => r.id === params.get("f"))
@@ -298,7 +300,7 @@
             try {
                 build = JSON.parse(build)
                 active.character = characters.find(c => c.id === build.character) || ""
-                active.weapons = weapons.filter(w => build.weapons.includes(w.id))
+                weapons.filter(w => build.weapons.includes(w.id)).map(addWeapon)
                 active.items = items.filter(i => build.items.includes(i.id))
                 active.stamps = stamps.filter(s => build.stamps.includes(s.id))
 				active.food = recipes.find(r => r.id === build.food)
