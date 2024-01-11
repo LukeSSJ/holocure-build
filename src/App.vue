@@ -47,6 +47,9 @@
 		font-size: 1rem;
 		color: #d5d5d5;
 	}
+	.ml-auto {
+		margin-left: auto;
+	}
 </style>
 <template>
     <div class="button-wrap">
@@ -98,6 +101,12 @@
 						type="stamps"
 					/>
                     <ItemButton v-for="i in (3 - active.stamps.length)" :key="i" />
+
+					<ItemButton
+						:item="active.food"
+						@click="active.food = null"
+						type="recipes"
+					/>
                 </div>
             </div>
         </div>
@@ -154,21 +163,37 @@
         </div>
     </div>
 
+	<br>
+
+    <div>
+        <div class="text-header">Food:</div>
+        <div class="item-wrap">
+			<ItemButton
+				v-for="recipe in recipes"
+				:key="recipe.id"
+				@click="active.food = recipe"
+				:item="recipe"
+				type="recipes"
+			/>
+        </div>
+    </div>
+
 	<div class="footer">
-		Check out the source code <a href="https://github.com/LukeSSJ/holocure-build" target="_blank">here</a>
+		Check out the source code <a href="https://github.com/LukeSSJ/holocure-build" target="_blank">here</a>.
 	</div>
 </template>
 <script setup>
 	import ItemButton from './ItemButton.vue'
 
     import {ref, reactive, computed, watch} from 'vue'
-    import {characters, weapons, items, stamps} from './data.js'
+    import {characters, weapons, items, stamps, recipes} from './data.js'
 
     const active = reactive({
         character: '',
         weapons: [],
         items: [],
         stamps: [],
+		food: null,
     })
 
     const activeWeapons = computed(() => {
@@ -252,6 +277,7 @@
             weapons: active.weapons.map(w => w.id),
             items: active.items.map(i => i.id),
             stamps: active.stamps.map(s => s.id),
+            food: active.food?.id,
         }
         localStorage.setItem("build", JSON.stringify(build))
     }
@@ -263,6 +289,7 @@
             active.weapons = weapons.filter(w => params.get("w")?.split(",").includes(w.id))
             active.items = items.filter(i => params.get("i")?.split(",").includes(i.id))
             active.stamps = stamps.filter(s => params.get("s")?.split(",").includes(s.id))
+			active.food = recipes.find(r => r.id === params.get("f"))
             return
         }
 
@@ -274,6 +301,7 @@
                 active.weapons = weapons.filter(w => build.weapons.includes(w.id))
                 active.items = items.filter(i => build.items.includes(i.id))
                 active.stamps = stamps.filter(s => build.stamps.includes(s.id))
+				active.food = recipes.find(r => r.id === build.food)
             } catch(e) {}
         }
     }
@@ -284,6 +312,7 @@
             active.weapons = []
             active.items = []
             active.stamps = []
+			active.food = null
         }
     }
 
@@ -292,7 +321,8 @@
         let weapons = active.weapons.map(w => w.id).join(",")
         let items = active.items.map(i => i.id).join(",")
         let stamps = active.stamps.map(s => s.id).join(",")
-        let url = `${location.origin}${location.pathname}?c=${character}&w=${weapons}&i=${items}&s=${stamps}`
+		let food = active.food.id ?? ""
+        let url = `${location.origin}${location.pathname}?c=${character}&w=${weapons}&i=${items}&s=${stamps}&f=${food}`
 
         navigator.clipboard.writeText(url)
             .then(() => alert("Copied to clipboard"))

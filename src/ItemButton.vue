@@ -13,9 +13,10 @@
     .item:disabled {
         opacity: 0.4;
     }
-    .item img {
+    .icon {
         max-width: 100%;
         max-height: 100%;
+		min-width: 40px;
     }
 	.collab-image {
 		position: absolute;
@@ -70,8 +71,8 @@
 	<div class="container">
 		<button class="item" @mouseover="onHover" :disabled="disabled">
 			<template v-if="item">
-				<img v-if="item" :src="imageUrl(`/${props.type}/${item.icon}.webp`)" :alt="item.name">
-				<img v-if="item && item.weapons" src="/Collab.webp" class="collab-image"/>
+				<img class="icon" :src="imageUrl(`/${props.type}/${item.icon}.webp`)" :alt="item.name">
+				<img v-if="item.weapons" src="/Collab.webp" class="collab-image"/>
 			</template>
 			<slot v-else/>
 		</button>
@@ -106,14 +107,13 @@ const props = defineProps({
 	type: String,
 	disabled: Boolean,
 })
-const item = props.item
 
 const tooltip = ref(null)
 
 const requirements = computed(() => {
-	if (!item) return ''
+	if (!props.item) return ''
 
-	const requirements = [...item.weapons]
+	const requirements = [...props.item.weapons]
 	if (requirements.length === 3) requirements.shift()
 
 	return requirements
