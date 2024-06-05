@@ -323,7 +323,7 @@
         let weapons = active.weapons.map(w => w.id).join(",")
         let items = active.items.map(i => i.id).join(",")
         let stamps = active.stamps.map(s => s.id).join(",")
-		let food = active.food.id ?? ""
+		let food = active.food?.id ?? ""
         let url = `${location.origin}${location.pathname}?c=${character}&w=${weapons}&i=${items}&s=${stamps}&f=${food}`
 
         navigator.clipboard.writeText(url)
