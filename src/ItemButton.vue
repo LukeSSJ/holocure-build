@@ -17,6 +17,7 @@
         max-width: 100%;
         max-height: 100%;
 		min-width: 40px;
+		image-rendering: pixelated;
     }
 	.collab-image {
 		position: absolute;

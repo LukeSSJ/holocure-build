@@ -172,6 +172,7 @@
 				v-for="recipe in recipes"
 				:key="recipe.id"
 				@click="active.food = recipe"
+				:disabled="active.food?.id === recipe.id"
 				:item="recipe"
 				type="recipes"
 			/>
