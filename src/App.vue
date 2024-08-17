@@ -201,7 +201,7 @@
         return [active.character.weapon].concat(active.weapons).filter(w => w)
     })
 
-    const weaponsUsed = {}
+    let weaponsUsed = {}
     let collabs = 0
 
     loadBuild()
@@ -316,6 +316,9 @@
             active.items = []
             active.stamps = []
 			active.food = null
+
+			weaponsUsed = {}
+			collabs = 0
         }
     }
 
